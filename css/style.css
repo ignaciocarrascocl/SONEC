@@ -60,12 +60,16 @@ audio {
     font-size: 16px;
 }
 .pop-left {
-    flex: 1
+    flex: 1;
+    max-height: 67vh;
+    overflow-y: auto;
 }
 .pop-right {
     flex: 1;
     text-align: center;
-    padding: 0 5%
+    padding: 0 5%;
+        max-height: 67vh;
+    overflow-y: auto;
 }
 .pop-right img {
     width: 100%
@@ -162,6 +166,15 @@ span.texto {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    margin: 0;
+}
+
+body#container {
+    margin: 0;
+}
+div#category-menu {
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .home {
     height: 100vh;
@@ -169,25 +182,19 @@ span.texto {
     justify-content: center;
     align-items: center;
 }
-body#container {
+html{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+
 }
 video#myVideo {
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    left: 50%;
-    top: 50%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
 }
 .contenido h1 {
     margin: 0;
@@ -285,7 +292,7 @@ a.category-item-link {
     flex: 2;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: 100%;
+    font-size: 75%;
 }
 .category-items {
     display: flex;
@@ -519,6 +526,30 @@ h1 {
 #item_12{
     top:12%;
     left: 79%;
+}
+#item_13 {
+    top: 69%;
+    left: 25%;
+}
+#item_14{
+top: 82%;
+    left: 72%;
+}
+#item_15{
+    top: 80%;
+    left: 60%;
+}
+#item_16{
+top: 85%;
+    left: 22%;
+}
+#item_17{
+    top: 18%;
+    left: 23%;
+}
+#item_18{
+    top: 40%;
+    left: 12%;
 }
 #item_proyectos {
     top: 81%;
