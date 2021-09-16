@@ -68,7 +68,12 @@ audio {
     flex: 1;
     text-align: center;
     padding: 0 5%;
-        max-height: 67vh;
+    max-height: 67vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.contenido {
+    height: 90vh;
     overflow-y: auto;
 }
 .pop-right img {
@@ -292,7 +297,7 @@ a.category-item-link {
     flex: 2;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: 75%;
+    font-size: 12px;
 }
 .category-items {
     display: flex;
