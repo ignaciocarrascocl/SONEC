@@ -18,7 +18,7 @@ audio {
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-    top: -100%;
+    top: -200%;
     width: 86%;
     height: 80vh;
     z-index: 2;
@@ -58,17 +58,18 @@ audio {
 .pop-content {
     display: flex;
     font-size: 16px;
+    height: 75%;
 }
 .pop-left {
     flex: 1;
-    max-height: 67vh;
-    overflow-y: auto;
+    overflow: auto;
+    max-height: 100%;
 }
 .pop-right {
     flex: 1;
     text-align: center;
     padding: 0 5%;
-    max-height: 67vh;
+    max-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -110,9 +111,7 @@ a {
 }
 .crooked {
     height: 50px;
-    transform: rotate(358deg);
-    margin-top: -47px;
-    margin-left: -2px;
+    clip-path: polygon(100% 0, 0 0, 0 50%);
 }
 
 
@@ -221,9 +220,10 @@ video#myVideo {
 }
 .right {
     flex: 5;
-    padding-top: 50px;
+    padding-top: 1vh;
+    height: 99vh;
+    overflow: auto;
 }
-
 /* Home */
 
 
@@ -257,7 +257,7 @@ a.category-item-link {
     color: black;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 14px;
     border-radius: 20px;
 }
 .category-item {
@@ -275,7 +275,6 @@ a.category-item-link {
 .title {
     background: white;
     flex: 1;
-    margin-bottom: 3%;
 }
 
 .title h1 {
