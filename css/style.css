@@ -73,10 +73,6 @@ audio {
     overflow-x: hidden;
     overflow-y: auto;
 }
-.contenido {
-    height: 90vh;
-    overflow-y: auto;
-}
 .pop-right img {
     width: 100%
 }
@@ -117,7 +113,7 @@ a {
 
 /* Laboratorio */
 .lab-item {
-    padding: 5% 10% 5% 18%;
+    padding: 2% 10% 2% 18%;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: bold;
     display: flex;
@@ -202,8 +198,8 @@ video#myVideo {
 }
 .contenido h1 {
     margin: 0;
-    padding: 20% 0;
-    font-size: 250%;
+    padding: 5% 0;
+    font-size: 32px;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: bold;
 }
@@ -216,7 +212,7 @@ video#myVideo {
 }
 .left {
     flex: 4;
-    height: 99vh;
+    height: 100vh;
 }
 .right {
     flex: 5;
