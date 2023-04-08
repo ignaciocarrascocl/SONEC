@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,99 +8,134 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body id="container" class="white">
+    <div id="menuparticles" onclick="hoverSound()"></div>
+    <header>
+        <span id="titleHeader">Estación Sensorial CECREA</span>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+        <img src="css/img/logo.jpg" alt="" srcset="">
+    </header>
     <div id="overlay"></div>
-    <h1>Estación Sensorial <br> CECREA</h1>
     <!-- Agregar clase "inactive" para ocultar items del menú.
     Para cambiar el tamaño de un item se puede cambiar la clase, existen 3 distintas: "big" "mid" y "small"-->
     <a href="cat_amarillo.html">
-        <div class="ball-item small animate__animated animate__bounceInLeft " id="item_1">
-        <div class="decoration"></div>
-        <span>Categoría amarillo</span>
-    </div></a>
-    <a href="cat_azul.html"><div class="ball-item mid animate__animated animate__bounceInLeft" id="item_2">
-        <div class="decoration"></div>
-        <span>Categoría azul</span>
-    </div></a>
-     <a href="cat_rojo.html"><div class="ball-item small animate__animated animate__bounceInLeft " id="item_3">
-        <div class="decoration"></div>
-        <span>Categoría rojo</span>
-    </div></a>
-    <a href="cat_amarillo.html"><div class="ball-item small animate__animated animate__bounceInLeft " id="item_4">
-        <div class="decoration"></div>
-        <span>Categoría amarillo</span>
-    </div></a>
-    <a href="cat_rojo.html"><div class="ball-item mid animate__animated animate__bounceInLeft " id="item_5">
-        <div class="decoration"></div>
-        <span>Categoría rojo</span>
-    </div></a>
-    <a href="cat_azul.html"><div class="ball-item big animate__animated animate__bounceInLeft " id="item_6">
-        <div class="decoration"></div>
-        <span>Categoría azul</span>
-    </div></a>
-    <a href="cat_amarillo.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_7">
-        <div class="decoration"></div>
-        <span>Categoría amarillo</span>
-    </div></a>
-    <a href="cat_rojo.html"><div class="ball-item mid animate__animated animate__bounceInRight " id="item_8">
-        <div class="decoration"></div>
-        <span>Categoría rojo</span>
-    </div></a>
-    <a href="cat_azul.html"><div class="ball-item big animate__animated animate__bounceInRight " id="item_9">
-        <div class="decoration"></div>
-        <span>Categoría azul</span>
-    </div></a>
-    <a href="cat_amarillo.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_10">
-        <div class="decoration"></div>
-        <span>Categoría amarillo</span>
-    </div></a>
-    <a href="cat_rojo.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_11">
-        <div class="decoration"></div>
-        <span>Categoría rojo</span>
-    </div></a>
-    <a href="cat_azul.html"><div class="ball-item big animate__animated animate__bounceInRight " id="item_12">
+        <div class="ball-item small animate__animated animate__fadeInLeft animate__delay-1s " id="item_1">
+            <div class="decoration"></div>
+            <span>Artes</span>
+        </div>
+    </a>
+    <a href="cat_azul.html">
+        <div class="ball-item small animate__animated animate__fadeInLeft animate__delay-2s" id="item_2">
+            <div class="decoration"></div>
+            <span>Ciencias</span>
+        </div>
+    </a>
+    <a href="cat_rojo.html">
+        <div class="ball-item small animate__animated animate__fadeInLeft" id="item_3">
+            <div class="decoration"></div>
+            <span>Comunicación</span>
+        </div>
+    </a>
+    <a href="cat_amarillo.html">
+        <div class="ball-item small animate__animated animate__fadeInLeft animate__delay-1s" id="item_4">
+            <div class="decoration"></div>
+            <span>Derechos</span>
+        </div>
+    </a>
+    <a href="cat_rojo.html">
+        <div class="ball-item small animate__animated animate__fadeInLeft animate__delay-2s" id="item_5">
+            <div class="decoration"></div>
+            <span>Participación</span>
+        </div>
+    </a>
+    <a href="cat_azul.html">
+        <div class="ball-item small animate__animated animate__fadeInLeft " id="item_6">
+            <div class="decoration"></div>
+            <span>Sustentabilidad</span>
+        </div>
+    </a>
+    <a href="cat_amarillo.html">
+        <div class="ball-item small animate__animated animate__fadeInRight animate__delay-1s" id="item_7">
+            <div class="decoration"></div>
+            <span>Tecnología</span>
+        </div>
+    </a>
+    <!--     <a href="cat_rojo.html">
+        <div class="ball-item small animate__animated animate__fadeInRight animate__delay-2s" id="item_8">
+            <div class="decoration"></div>
+            <span>Categoría rojo</span>
+        </div>
+    </a>
+    <a href="cat_azul.html">
+        <div class="ball-item small animate__animated animate__fadeInRight " id="item_9">
+            <div class="decoration"></div>
+            <span>Categoría azul</span>
+        </div>
+    </a>
+    <a href="cat_amarillo.html">
+        <div class="ball-item small animate__animated animate__fadeInRight animate__delay-1s" id="item_10">
+            <div class="decoration"></div>
+            <span>Categoría amarillo</span>
+        </div>
+    </a>
+    <a href="cat_rojo.html">
+        <div class="ball-item small animate__animated animate__fadeInRight animate__delay-2s" id="item_11">
+            <div class="decoration"></div>
+            <span>Categoría rojo</span>
+        </div>
+    </a>
+    <a href="cat_azul.html">
+        <div class="ball-item small animate__animated animate__fadeInRight " id="item_12">
+            <div class="decoration"></div>
+            <span>Categoría azul</span>
+        </div>
+    </a> -->
+    <!-- <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_13">
         <div class="decoration"></div>
         <span>Categoría azul</span>
     </div> </a>
-    <a href="cat_azul.html"><div class="ball-item big animate__animated animate__bounceInRight " id="item_13">
+    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_14">
         <div class="decoration"></div>
         <span>Categoría azul</span>
     </div> </a>
-    <a href="cat_azul.html"><div class="ball-item big animate__animated animate__bounceInRight " id="item_14">
+    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_15">
         <div class="decoration"></div>
         <span>Categoría azul</span>
     </div> </a>
-    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_15">
+    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_16">
         <div class="decoration"></div>
         <span>Categoría azul</span>
     </div> </a>
-    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_16">
+    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_17">
         <div class="decoration"></div>
         <span>Categoría azul</span>
     </div> </a>
-    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_17">
+    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__fadeInRight " id="item_18">
         <div class="decoration"></div>
         <span>Categoría azul</span>
-    </div> </a>
-    <a href="cat_azul.html"><div class="ball-item small animate__animated animate__bounceInRight " id="item_18">
-        <div class="decoration"></div>
-        <span>Categoría azul</span>
-    </div> </a>
-    <div onclick="showProjects()" class="ball-item small animate__animated animate__bounceInLeft " id="item_proyectos">
-  
-        <span>Proyectos</span>
+    </div> </a> 
+    
+-->
+    <div onclick="showProjects()" class="ball-item small animate__animated animate__fadeInLeft " id="item_proyectos">
+
+        <span>ESTACIÓN SENSORIAL CECREA</span>
     </div>
-    <div class="color-change animate__animated animate__backInDown " id="blue"></div>
-    <div class="color-change animate__animated animate__backInDown " id="red"></div>
-    <div class="color-change animate__animated animate__backInDown " id="yellow"></div>
-    <a href="index.html" 
-    div><img class="volver_home" src="css/img/volver.png" width="40px" alt=""></a>
+
+    <div class="color-change animate__animated animate__backInDown " onclick="fxSound()" id="blue"></div>
+    <div class="color-change animate__animated animate__backInDown " onclick="fxSound()" id="red"></div>
+    <div class="color-change animate__animated animate__backInDown " onclick="fxSound()" id="yellow"></div>
+    <a href="index.html" div><img class="volver_home" src="css/img/volver.png" width="40px" alt=""></a>
     <div id="proyectos" class="hide">
         <div onclick="cerrarProyectos()" class="cerrar"><img src="css/img/cerrar.png" alt=""></div>
-        <h2>PROYECTO</h2>
+        <h2>ESTACIÓN SENSORIAL CECREA</h2>
         <div>
-            <p>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis ultricies eu, bibendum interdum lorem.</p> 
-            <p>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis ultricies eu, bibendum interdum lorem.</p> 
+            <p>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum
+                dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis ultricies
+                eu, bibendum interdum lorem.</p>
+            <p>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum
+                dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis ultricies
+                eu, bibendum interdum lorem.</p>
         </div>
         <div class="logos">
             <img src="https://via.placeholder.com/150" alt="">
@@ -107,6 +143,22 @@
             <img src="https://via.placeholder.com/150" alt="">
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
+        integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
+    <script>// particles 
+        tsParticles
+            .loadJSON("menuparticles", "js/menu.json")
+            .then((tsparticles) => {
+                console.log("callback - tsparticles config loaded");
+            })
+            .catch((error) => {
+                console.error(error);
+            });</script>
 </body>
+
 </html>

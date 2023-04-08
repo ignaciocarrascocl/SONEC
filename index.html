@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="containerHome" class="white">
-    <video autoplay muted loop id="myVideo">
-        <source src="css/img/background_v3.mp4" type="video/mp4">
-      </video>
+
+<body id="tsparticles" class="white">
       <div class="overlay">
-        <a href="menu_principal.html">
             <div class="home">
-                <h1>Estación Sensorial <br> CECREA</h1>
+                <h1 onclick="clickSound(click)"><a href="menu_principal.html">Estación Sensorial <br> CECREA</a></h1>
             </div>
-        </a>
       </div>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js" integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
+     <script>// particles 
+
+tsParticles
+    .loadJSON("tsparticles", "js/particles.json")
+    .then((container) => {
+        console.log("callback - tsparticles config loaded");
+    })
+    .catch((error) => {
+        console.error(error);
+    });</script>
 </body>
 </html>

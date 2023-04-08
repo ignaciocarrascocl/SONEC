@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,116 +11,162 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 
 </head>
+
 <body id="container">
+    <header>
+        <span id="titleHeader">Estación Sensorial CECREA</span>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+        <img src="css/img/logo.jpg" alt="" srcset="">
+    </header>
     <div id="overlay"></div>
     <div class="lab-menu cat-yellow" id="category-menu">
-            <div class="left animate__bounceInLeft animate__animated">
-                <div class="top-menu animate__bounceInUp animate__animated ">
-                    <a href="menu_principal.html">
-                        <img src="css/img/back.png" width="40px" alt="">
-                        MENÚ
-                    </a>
-                    <a href="cat_amarillo.html">
-                        <img src="css/img/volver.png" width="20px" alt="">
-                        CATEGORÍA UNO
-                    </a>
-                </div>
-                <div class="contenido animate__bounceInUp animate__animated animate__delay-1s">
-                    <h1>LABORATORIO UNO</h1>
-                    <span>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis ultricies eu, bibendum interdum lorem.</span>
-                </div>
-               
+        <div class="left animate__fadeIn animate__animated">
+            <div class="top-menu animate__fadeInUp animate__animated ">
+                <a href="menu_principal.html">
+                    <img src="css/img/back.png" width="40px" alt="">
+                    MENÚ
+                </a>
+                <a href="cat_amarillo.html">
+                    <img src="css/img/volver.png" width="20px" alt="">
+                    CATEGORÍA UNO
+                </a>
             </div>
-            <!-- <div class="separador-flecha animate__animated animate__bounceInDown animate__delay-1s">
+            <div class="contenido animate__fadeInUp animate__animated animate__delay-1s">
+                <h1>LABORATORIO UNO</h1>
+                <span>Vestibulum vestibulum mattis lorem, et venenatis turpis vulputate et. Etiam tincidunt vestibulum
+                    dignissim. Praesent pretium nibh at tortor bibendum commodo. Cras turpis ligula, congue quis
+                    ultricies eu, bibendum interdum lorem.</span>
+            </div>
+
+        </div>
+        <!-- <div class="separador-flecha animate__animated animate__bounceInDown animate__delay-1s">
                 <img src="css/img/separador-flecha.png" alt="">
             </div>  -->
-            <div class="right">
-                <div class="lab-item animate__lightSpeedInRight animate__animated animate__delay-2s" data-poptarget="audio">
-                    <span class="more">+</span>
-                    <span class="rounded-back"></span>
-                    <span class="texto">Ejemplo audio</span>
-                </div>
-                <div class="lab-item animate__lightSpeedInRight animate__animated animate__delay-2s" data-poptarget="video">
-                    <span class="more">+</span>
-                    <span class="rounded-back"></span>
-                    <span class="texto">Ejemplo Video</span>
-                </div>
-                <div class="lab-item animate__lightSpeedInRight animate__animated animate__delay-2s" data-poptarget="galeria">
-                    <span class="more">+</span>
-                    <span class="rounded-back"></span>
-                    <span class="texto">Ejemplo Galería</span>
-                </div>
-                <div class="lab-item animate__lightSpeedInRight animate__animated animate__delay-2s" data-poptarget="audio">
-                    <span class="more">+</span>
-                    <span class="rounded-back"></span>
-                    <span class="texto">Ejemplo audio</span>
-                </div>                                                               
+        <div class="right">
+            <div class="lab-item animate__fadeInDown animate__animated animate__delay-2s" data-poptarget="audio">
+
+                <span class="rounded-back"></span>
+                <span class="texto">Ejemplo audio</span>
             </div>
+            <div class="lab-item animate__fadeInDown animate__animated animate__delay-2s" data-poptarget="video">
+
+                <span class="rounded-back"></span>
+                <span class="texto">Ejemplo Video</span>
+            </div>
+            <div class="lab-item animate__fadeInDown animate__animated animate__delay-2s" data-poptarget="galeria">
+
+                <span class="rounded-back"></span>
+                <span class="texto">Ejemplo Galería</span>
+            </div>
+            <div class="lab-item animate__fadeInDown animate__animated animate__delay-2s" data-poptarget="audio">
+
+                <span class="rounded-back"></span>
+                <span class="texto">Ejemplo audio</span>
+            </div>
+        </div>
+
+        <div id="audio" class="popper">
+            <div class="fondoPopper">
+                <div class="sobrefondoPopper">
+                <div class="pop-head">
+                    <h2>Título del item</h2>
+                    <div onclick="cerrarPopper()"><img src="css/img/cerrar.png" width="30" alt=""></div>
+                </div>
+                <div class="pop-content">
+                    <div class="pop-left">
+                        <audio controls>
+                            <source src="files/file_example_MP3_700KB.mp3" type="audio/ogg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <h3>Playlist</h3>
+                        <span class="playlist">
+                            <ol>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ol>
+                        </span>
+                        <div class="campos">
+                            <div class="campo-item"><span>Autores:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Materias:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Editor:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Formato:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Lugar:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Derechos:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Procedencia:</span>Nombre autor</div>
+                            <span class="campo-item">
+                                <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam
+                                tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras
+                                turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
+                            </span>
+                        </div>
     
-    <div id="audio" class="popper">
-        <div class="pop-head">
-            <h2>Título del item</h2>
-            <div onclick="cerrarPopper()" ><img src="css/img/cerrar.png" width="30" alt=""></div>
-        </div>
-        <div class="pop-content">
-            <div class="pop-left">
-                <audio controls>
-                    <source src="files/file_example_MP3_700KB.mp3" type="audio/ogg">
-                  Your browser does not support the audio element.
-                  </audio>
-                <h3>Playlist</h3>
-                <span class="playlist">
-                    <ol><li>Item 1</li>
-                    <li>Item 2</li>
-                <li>Item 3</li></ol>
-                </span>
-                <div class="campos">
-                    <div class="campo-item"><span>Autores:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Materias:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Editor:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Formato:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Lugar:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Derechos:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Procedencia:</span>Nombre autor</div>
-                    <span class="campo-item">
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
-                    </span>
+                    </div>
+                    <div class="pop-right">
+                        <span class="image-holder">
+                            <img src="https://via.placeholder.com/300x200" alt="">
+                        </span>
+                    </div>
                 </div>
-                
-                </div>
-            <div class="pop-right">
-                <span class="image-holder">
-                    <img src="https://via.placeholder.com/300x200" alt="">
-                </span>
             </div>
+            </div>
+
         </div>
-    </div>
-    <div id="video" class="popper">
-        <div class="pop-head">
-            <h2>Título del item</h2>
-            <div onclick="cerrarPopper()" ><img src="css/img/cerrar.png" width="30" alt=""></div>
-        </div>
-        <div class="pop-inner">
+        <div id="video" class="popper">
+            <div class="fondoPopper">
+                <div class="sobrefondoPopper">
+            <div class="pop-head">
+                <h2>Título del item</h2>
+                <div onclick="cerrarPopper()"><img src="css/img/cerrar.png" width="30" alt=""></div>
+            </div>
+            <div class="pop-inner">
+                <div class="pop-content">
+                    <div class="pop-left">
+                        <div class="video">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop-right left-align">
+                        <h3>Playlist</h3>
+                        <span class="playlist">
+                            <ol>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ol>
+                        </span>
+                        <div class="campos">
+                            <div class="campo-item"><span>Autores:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Materias:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Editor:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Formato:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Lugar:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Derechos:</span>Nombre autor</div>
+                            <div class="campo-item"><span>Procedencia:</span>Nombre autor</div>
+                            <span class="campo-item">
+                                <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et:
+                                Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo
+                                Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div></div>
+        <div id="galeria" class="popper">
+            <div class="fondoPopper">
+                <div class="sobrefondoPopper">
+            <div class="pop-head">
+                <h2>Título del item</h2>
+                <div onclick="cerrarPopper()"><img src="css/img/cerrar.png" width="30" alt=""></div>
+            </div>
             <div class="pop-content">
                 <div class="pop-left">
-                    <div class="video">
-                        <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    </div>
-                </div>
-                <div class="pop-right left-align">
-                    <h3>Playlist</h3>
-                    <span class="playlist">
-                        <ol><li>Item 1</li>
-                        <li>Item 2</li>
-                    <li>Item 3</li></ol>
-                    </span>
                     <div class="campos">
                         <div class="campo-item"><span>Autores:</span>Nombre autor</div>
                         <div class="campo-item"><span>Materias:</span>Nombre autor</div>
@@ -129,56 +176,41 @@
                         <div class="campo-item"><span>Derechos:</span>Nombre autor</div>
                         <div class="campo-item"><span>Procedencia:</span>Nombre autor</div>
                         <span class="campo-item">
-                            <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.                    
+                            <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam
+                            tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras
+                            turpis ligula: congue quis ultricies eu:bibendum interdum lorem.
                         </span>
+                    </div>
+
+                </div>
+                <div class="pop-right">
+                    <div id="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
+                                <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
+                                <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
+                                <li class="splide__slide"><img src="https://via.placeholder.com/500x3s00" alt=""></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="galeria" class="popper">
-        <div class="pop-head">
-            <h2>Título del item</h2>
-            <div onclick="cerrarPopper()" ><img src="css/img/cerrar.png" width="30" alt=""></div>
-        </div>
-        <div class="pop-content">
-            <div class="pop-left">
-                <div class="campos">
-                    <div class="campo-item"><span>Autores:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Materias:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Editor:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Formato:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Lugar:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Derechos:</span>Nombre autor</div>
-                    <div class="campo-item"><span>Procedencia:</span>Nombre autor</div>
-                    <span class="campo-item">
-                        <span>Descripción:</span>vestibulum mattis lorem et: venenatis turpis vulputate et: Etiam tincidunt vestibulum dignissim: Praesent pretium nibh at tortor: bibendum commodo Cras turpis ligula: congue quis ultricies eu:bibendum interdum lorem.                    
-                    </span>
-                </div>
-                
-                </div>
-            <div class="pop-right">
-                <div id="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
-                            <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
-                            <li class="splide__slide"><img src="https://via.placeholder.com/500x300" alt=""></li>
-                            <li class="splide__slide"><img src="https://via.placeholder.com/500x3s00" alt=""></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>   </div> 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script>
-        document.addEventListener( 'DOMContentLoaded', function () {
-            new Splide( '#splide', {
-	type  : 'fade',
-	rewind: true,
-} ).mount();
-        } );
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splide', {
+                type: 'fade',
+                rewind: true,
+            }).mount();
+        });
     </script>
 </body>
+
 </html>
