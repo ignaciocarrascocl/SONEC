@@ -598,6 +598,7 @@ div#item_proyectos span {
 }
 
 .ballWrapper {
+    animation: 0.5s all;
   min-width: 100px;
   width: 15%;
   min-height: 100px;
@@ -618,20 +619,19 @@ div#item_proyectos span {
   justify-content: space-around;
 }
 
-.blue .ball-item {
+#blue .ball-item {
   background: #072eb9;
 }
 
-.red .ball-item {
+#red .ball-item {
   background: #c01001;
 }
 
-.yellow .ball-item {
+#yellow .ball-item {
   background: #ffb800;
 }
 
-.ball-item:after,
-.color-change:after {
+.ball-item:after {
   content: "";
   display: block;
   padding-bottom: 100%;
@@ -659,40 +659,27 @@ div#item_proyectos span {
   padding-left: 7%;
 }
 
-.color-change {
-  border-radius: 50%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  color: white;
-  font-size: 48px;
-}
+
 
 .campo-item span {
   font-weight: bold;
   margin-right: 10px;
 }
 
-#blue {
-  background: #072eb9;
+.black .ball-item {
+    background-color: #000;
 }
 
-#red {
-  background: #c01001;
+.tool .ball-item{
+    border: 0;
 }
 
-.blackBall {
-  background-color: #000000;
-  border-radius: 50%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  color: white;
-  font-size: 48px;
+.ball-item canvas {
+    position: absolute;
+}
+
+#keyboardActivator .ball-item {
+    display: -webkit-box;
 }
 
 #overlay {
@@ -713,19 +700,11 @@ div#item_proyectos span {
   display: none;
 }
 
-#yellow {
-  background: #ffb800;
-}
-
-.blue #blue,
-.yellow #yellow,
-.red #red {
+.blue #blue .ball-item,
+.yellow #yellow .ball-item,
+.red #red .ball-item {
   background: white;
   color: #000;
-}
-
-.s {
-  border: white 2px solid;
 }
 
 /* Keyboard */
@@ -759,12 +738,7 @@ div#item_proyectos span {
   color: white;
 }
 /* End keyboard */
-.blue span,
-.red span,
-.red h1,
-.blue h1 {
-  color: white;
-}
+
 
 .cat-yellow a.category-item-link:hover > .category-item {
   border: 0;

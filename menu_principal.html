@@ -75,68 +75,93 @@
             </div>
         </div>
     </div>
+
     <div class="buttonWrapper">
+        <!-- Artes -->
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-1s" id="item_1">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_1">
                 <div class="decoration"></div>
                 <span>Artes</span>
             </div>
         </a>
+
+        <!-- Ciencias -->
         <a class="ballWrapper" href="cat_azul.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-2s" id="item_2">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-2s" id="item_2">
                 <div class="decoration"></div>
                 <span>Ciencias</span>
             </div>
         </a>
-        <div class="ballWrapper color-change animate__animated animate__backInDown" id="blue">
-            <i class="bi "></i>
-        </div>
 
+        <!-- Comunicación -->
         <a class="ballWrapper" href="cat_rojo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft" id="item_3">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing" id="item_3">
                 <div class="decoration"></div>
                 <span>Comunicación</span>
             </div>
         </a>
-        <div class="ballWrapper color-change animate__animated animate__backInDown" id="yellow"> <i class="bi "></i>
-        </div>
 
+        <!-- Derechos -->
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-1s" id="item_4">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_4">
                 <div class="decoration"></div>
                 <span>Derechos</span>
             </div>
         </a>
 
+        <!-- Participación -->
         <a class="ballWrapper" href="cat_rojo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-2s" id="item_5">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-2s" id="item_5">
                 <div class="decoration"></div>
                 <span>Participación</span>
             </div>
         </a>
-        <div class="ballWrapper color-change animate__animated animate__backInDown" id="red"> <i class="bi "></i>
-        </div>
+
+        <!-- Sustentabilidad -->
         <a class="ballWrapper" href="cat_azul.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft" id="item_6">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing" id="item_6">
                 <div class="decoration"></div>
                 <span>Sustentabilidad</span>
             </div>
         </a>
+
+        <!-- Tecnología -->
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInRight animate__delay-1s" id="item_7">
+            <div class="ball-item animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_7">
                 <div class="decoration"></div>
                 <span>Tecnología</span>
             </div>
         </a>
-        <div class="ballWrapper ripple animate__animated animate__backInDown blackBall" id="drumMachineActivator"> <i
-                class="bi "></i>    <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+
+        <!-- Color Change Divs -->
+        <div class="ballWrapper tool color-change" id="blue">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
+            </div>
         </div>
-        <div class="ballWrapper animate__animated animate__backInDown blackBall" id="keyboardActivator"> <i
-                class="bi "></i>
+        <div class="ballWrapper tool color-change" id="yellow">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
+            </div>
+        </div>
+        <div class="ballWrapper tool color-change" id="red">
+            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
+            </div>
+        </div>
+
+        <!-- Black Balls -->
+        <div class="ballWrapper tool black" id="drumMachineActivator">
+            <div class="ball-item ripple color-change animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+    
+            </div>
+
+        </div>
+        <div class="ballWrapper tool black" id="keyboardActivator">
+            <div class="ball-item color-change animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="waverBackground">
+            </div>
         </div>
     </div>
 
@@ -266,13 +291,13 @@
     <script src="js/script.js"></script>
     <script src="js/drumMachine.js"></script>
     <script src="js/menu.js"></script>
-            <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
     <script>
- const SW = new SiriWave({
-  container: document.getElementById("keyboardActivator"),
-  autostart: true,
-  cover: true
-  });
+        const SW = new SiriWave({
+            container: document.getElementById("waverBackground"),
+            autostart: true,
+            cover: true
+        });
         // particles
         tsParticles
             .loadJSON("menuparticles", "js/menu.json")

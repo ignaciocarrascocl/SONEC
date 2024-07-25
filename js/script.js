@@ -217,10 +217,7 @@ const keyboardSoundSrc = [
 
   /* Change animation type after circles animation */
   const addAnimation = () => {
-    const elements = [
-      ...document.getElementsByClassName("ball-item"),
-      ...document.getElementsByClassName("ball-itemAlt"),
-    ];
+    const elements = document.getElementsByClassName("keep_pulsing");
     for (let i = 0; i < elements.length; i++) {
       elements[i].classList.remove(
         "animate__fadeInLeft",
