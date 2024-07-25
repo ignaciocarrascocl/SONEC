@@ -710,33 +710,51 @@ div#item_proyectos span {
 /* Keyboard */
 
 #keyboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 10px;
-  max-width: 800px;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+  }
+  
+  .key {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the text */
+    font-size: 1.2em;
+    padding: 30px 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .whiteKey {
+    background-color: #ffffff;
+    color: black;
+  }
+  
+  .blackKey {
+    background-color: #000000;
+    color: white;
+  }
+  
+  #cycleSound {
+    width: 120px;  /* Increase the size of the button */
+    height: 120px;  /* Increase the size of the button */
+    border-radius: 50%;  /* Make the button circular */
+    margin: 0 auto;  /* Center the button horizontally */
+    display: block;  /* Ensure the button is treated as a block element */
+    background-color: #ffb800;  /* Change the button color */
+    border: none;  /* Remove the default border */
+    color: black;  /* Ensure the text color is white */
+    font-weight: bold;
+    font-size: 1.2em;  /* Increase the font size of the button text */
+    cursor: pointer;  /* Add a pointer cursor on hover */
+  }
 
-.key {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 200px;
-  font-size: 1.2em;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-}
+  #cycleSound:hover{
+    background-color: #c01001;
+  }
+  
 
-.whiteKey {
-  background-color: #ffffff;
-  color: black;
-}
-
-.blackKey {
-  background-color: #000000;
-  color: white;
-}
 /* End keyboard */
 
 
@@ -851,32 +869,6 @@ h5.card-title {
     border: 5px solid black;
 }
 
-.key {
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-}
-
-.key > div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.whiteKey {
-  background-color: white;
-  color: black;
-}
-.blackKey {
-  background-color: black;
-  color: white;
-}
-
 #drum_machine.active,
 #keyboard.active {
   top: 50%;
@@ -963,4 +955,124 @@ h5.card-title {
     100% {
         transform: scale(1.5);
     }
+}
+
+/* drummachine */
+
+#drum_machine .pad {
+    background-color: #072eb9;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Ensure this matches the inline style for height */
+    width: 80px; /* Ensure this matches the inline style for width */
+}
+
+#drum_machine .pad:hover {
+    background-color: #ffb800;
+    color: white;
+}
+
+#drum_machine .pad:active {
+    background-color: #c01001;
+    color: white;
+}
+
+#drum_machine #play {
+    background-color: #072eb9;
+    color: white;
+    border: none;
+}
+
+#drum_machine #play:hover {
+    background-color: #ffb800;
+    color: white;
+}
+
+#drum_machine #play:active {
+    background-color: #c01001;
+    color: white;
+}
+
+#drum_machine #stop {
+    background-color: #c01001;
+    color: white;
+    border: none;
+}
+
+#drum_machine #stop:hover {
+    background-color: #ffb800;
+    color: white;
+}
+
+#drum_machine #stop:active {
+    background-color: #072eb9;
+    color: white;
+}
+
+#drum_machine #reset {
+    background-color: #ffb800;
+    color: white;
+    border: none;
+}
+
+#drum_machine #reset:hover {
+    background-color: #072eb9;
+    color: white;
+}
+
+#drum_machine #reset:active {
+    background-color: #c01001;
+    color: white;
+}
+
+/* CSS for playhead */
+#drum_machine .playhead {
+    background-color: #ffb800 !important; /* Use one of the provided colors */
+    color: white;
+}
+
+/* Ensuring vertical and horizontal center alignment for pads */
+#drum_machine .pad {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Removing borders and improving style for tempo and volume */
+#drum_machine #tempo, #drum_machine #volume {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 100%;
+}
+
+#drum_machine .form-label {
+    font-weight: bold;
+    color: #072eb9;
+    margin-bottom: 10px;
+}
+
+#drum_machine #tempo {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#drum_machine #volume {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#drum_machine .col-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#drum_machine .row.mt-4 {
+    margin-top: 20px;
 }

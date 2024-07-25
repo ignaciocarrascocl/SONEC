@@ -205,12 +205,12 @@
         </div>
         <div class="row mt-4">
             <div class="col-6 text-center">
-                <label for="tempo" class="form-label">Tempo (BPM):</label>
+                <label for="tempo" class="form-label">Tempo:</label>
                 <input type="number" id="tempo" class="form-control d-inline-block w-auto" min="60" max="200"
                     value="120">
             </div>
             <div class="col-6 text-center">
-                <label for="volume" class="form-label">Volume:</label>
+                <label for="volume" class="form-label">Volumen:</label>
                 <input type="range" id="volume" class="form-range" min="0" max="100" value="50">
             </div>
         </div>
@@ -232,8 +232,6 @@
     <div id="keyboard">
         <div class="container">
             <div class="row no-gutters">
-                <button id="cycleSound" class="btn btn-primary">Cycle Sound</button>
-
                 <div class="col-3 p-2">
                     <div class="key btn btn-dark rounded whiteKey" data-sound="key1">Do</div>
                 </div>
@@ -271,8 +269,14 @@
                     <div class="key btn btn-dark rounded whiteKey" data-sound="key12">Si</div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 p-2 text-center">
+                    <button id="cycleSound" class="btn btn-primary">NUEVO SONIDO</button>
+                </div>
+            </div>
         </div>
     </div>
+    
     <!-- END DRUM MACHINE -->
 
     <a href="index.html"><img class="volver_home" src="css/img/volver.png" width="40px" alt=""></a>
