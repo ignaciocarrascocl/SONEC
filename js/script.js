@@ -1,6 +1,4 @@
 window.onload = function () {
-
-    
   $("#drumMachineActivator").click(function () {
     $("#drum_machine").addClass("active");
     $("#overlay").addClass("active");
@@ -58,7 +56,7 @@ const keyboardSoundSrc = [
     "./audio/synthSamples/synthSound2.wav",
     "./audio/synthSamples/synthSound3.wav",
     "./audio/synthSamples/synthSound4.wav",
-    "./audio/synthSamples/synthSound5.wav"
+    "./audio/synthSamples/synthSound3.wav"
   ];
   
   let currentSoundIndex = 0;

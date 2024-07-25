@@ -812,18 +812,53 @@ a.category-item-link {
 }
 
 #sidebar {
+
+    background-color: black;
+    color: white; /* Optional: to ensure text is visible on black background */
   position: fixed;
   left: -300px;
   /* Hide sidebar initially */
   top: 0;
   height: 100%;
   width: 300px;
-  background: #f8f9fa;
   padding: 20px;
   transition: left 0.3s ease;
   /* Smooth transition */
   z-index: 1000;
   overflow-y: auto;
+}
+h5.card-title {
+    font-weight: bold;
+}
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+#sidebar, #sidebar * {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #333;
+}
+
+#sidebar::-webkit-scrollbar, #sidebar *::-webkit-scrollbar {
+    width: 12px;
+}
+
+#sidebar::-webkit-scrollbar-track, #sidebar *::-webkit-scrollbar-track {
+    background: #333; /* Track color */
+    border-radius: 6px;
+}
+
+#sidebar::-webkit-scrollbar-thumb, #sidebar *::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 6px;
+    border: 3px solid #333; /* Space around thumb */
+}
+
+/* Optional: Hover effect for scrollbar thumb */
+#sidebar::-webkit-scrollbar-thumb:hover, #sidebar *::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker thumb color on hover */
+}
+
+.form-select, .form-select option {
+    background-color: white; /* Optional: to keep the select dropdowns white */
+    color: black; /* Optional: to keep the text in the dropdowns black */
 }
 
 #drum_machine, #keyboard {
@@ -923,7 +958,7 @@ a.category-item-link {
     margin-top: -50px;
     margin-left: -50px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 2px solid white;
     opacity: 0;
     animation: ripple 3s infinite ;
 }
