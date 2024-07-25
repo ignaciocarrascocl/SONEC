@@ -1,0 +1,197 @@
+[
+    {
+        "Nombre del Lab": "Explora el Arte Abstracto",
+        "Categoría": "Artes",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Física para Principiantes",
+        "Categoría": "Ciencias",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Comunicación Efectiva en la Era Digital",
+        "Categoría": "Comunicaciones",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Derechos Humanos y Sociedad",
+        "Categoría": "Derechos",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Participación Ciudadana Activa",
+        "Categoría": "Participación",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Energías Renovables y Sustentabilidad",
+        "Categoría": "Sustentabilidad",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Introducción a la Programación",
+        "Categoría": "Tecnología",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Historia del Arte Moderno",
+        "Categoría": "Artes",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Química en la Vida Cotidiana",
+        "Categoría": "Ciencias",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Estrategias de Comunicación Social",
+        "Categoría": "Comunicaciones",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Derechos de los Niños y Jóvenes",
+        "Categoría": "Derechos",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Movimientos Sociales y Participación",
+        "Categoría": "Participación",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Agricultura Sustentable",
+        "Categoría": "Sustentabilidad",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Innovación en Tecnología de Software",
+        "Categoría": "Tecnología",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Arte y Cultura Popular",
+        "Categoría": "Artes",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Biología y el Medio Ambiente",
+        "Categoría": "Ciencias",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Comunicación Digital y Redes Sociales",
+        "Categoría": "Comunicaciones",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Derechos Laborales",
+        "Categoría": "Derechos",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Democracia y Participación Ciudadana",
+        "Categoría": "Participación",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Gestión de Residuos y Sustentabilidad",
+        "Categoría": "Sustentabilidad",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Taller de Pintura y Dibujo",
+        "Categoría": "Artes",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Física Cuántica para Curiosos",
+        "Categoría": "Ciencias",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Periodismo de Investigación",
+        "Categoría": "Comunicaciones",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Derechos Ambientales",
+        "Categoría": "Derechos",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Participación en Organizaciones Juveniles",
+        "Categoría": "Participación",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Tecnología y Educación",
+        "Categoría": "Tecnología",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Arte y Política",
+        "Categoría": "Artes",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Ciencia y Tecnología en la Era Moderna",
+        "Categoría": "Ciencias",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Comunicación No Verbal",
+        "Categoría": "Comunicaciones",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Derechos Digitales",
+        "Categoría": "Derechos",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Liderazgo y Participación Social",
+        "Categoría": "Participación",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Energía Solar y su Impacto",
+        "Categoría": "Sustentabilidad",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Robótica para Principiantes",
+        "Categoría": "Tecnología",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Historia del Arte Latinoamericano",
+        "Categoría": "Artes",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Genética y Evolución",
+        "Categoría": "Ciencias",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Medios de Comunicación y Sociedad",
+        "Categoría": "Comunicaciones",
+        "Centro": "Concepción"
+    },
+    {
+        "Nombre del Lab": "Derechos de las Mujeres",
+        "Categoría": "Derechos",
+        "Centro": "Arica"
+    },
+    {
+        "Nombre del Lab": "Participación Comunitaria y Desarrollo Local",
+        "Categoría": "Participación",
+        "Centro": "Temuco"
+    },
+    {
+        "Nombre del Lab": "Arquitectura Sustentable",
+        "Categoría": "Sustentabilidad",
+        "Centro": "Concepción"
+    }
+]

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-center position-relative">
+          <div class="white-keys d-flex">
+            <div class="key white" id="C"></div>
+            <div class="key white" id="D"></div>
+            <div class="key white" id="E"></div>
+            <div class="key white" id="F"></div>
+            <div class="key white" id="G"></div>
+            <div class="key white" id="A"></div>
+            <div class="key white" id="B"></div>
+            <div class="key white" id="C2"></div>
+          </div>
+          <div class="black-keys position-absolute d-flex">
+            <div class="key black" id="Csharp"></div>
+            <div class="key black" id="Dsharp"></div>
+            <!-- No black key between E and F -->
+            <div class="key black" id="Fsharp"></div>
+            <div class="key black" id="Gsharp"></div>
+            <div class="key black" id="Asharp"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .white-keys .key {
+      width: 40px;
+      height: 150px;
+      border: 1px solid #000;
+      background-color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    .black-keys .key {
+      width: 30px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: #000;
+      margin-left: -15px;
+      margin-right: -15px;
+      z-index: 2;
+    }
+    .black-keys .key:nth-child(1) {
+      margin-left: 25px; /* Position C# correctly */
+    }
+    .black-keys .key:nth-child(2) {
+      margin-left: 50px; /* Position D# correctly */
+    }
+    .black-keys .key:nth-child(3) {
+      margin-left: 75px; /* Position F# correctly */
+    }
+    .black-keys .key:nth-child(4) {
+      margin-left: 100px; /* Position G# correctly */
+    }
+    .black-keys .key:nth-child(5) {
+      margin-left: 125px; /* Position A# correctly */
+    }
+  </style>
+  

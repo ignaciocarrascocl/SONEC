@@ -1,227 +1,253 @@
 window.onload = function () {
+  $("#drumMachineActivator").click(function () {
+    $("#drum_machine").addClass("active");
+    $("#overlay").addClass("active");
+  });
 
-    let noteNumber = 0;
-    let noteArray = ["a", "b", "c", "d", "e", "f", "g"]
-    let links = document.getElementsByTagName('a');
+  $("#keyboardActivator").click(function () {
+    $("#keyboard").addClass("active");
+    $("#overlay").addClass("active");
+  });
 
-    if (window.localStorage.getItem("localNumber")) {
-        noteNumber = window.localStorage.getItem("localNumber");
-    } else {
-        window.localStorage.setItem("localNumber", 0)
+  // Click outside the active divs to deactivate them
+  $(document).click(function (event) {
+    if (
+      !$(event.target).closest(
+        "#drum_machine, #keyboard, #drumMachineActivator, #keyboardActivator"
+      ).length
+    ) {
+      $("#drum_machine").removeClass("active");
+      $("#keyboard").removeClass("active");
+      $("#overlay").removeClass("active");
     }
+  });
 
-    const updateNote = () => {
-        if (noteNumber <= (noteArray.length - 1)) {
-            console.log(noteArray[noteNumber])
-            noteNumber++
-        } else {
-            noteNumber = 0;
-        }
+  // Shuffler
+
+  const buttonWrapper = document.querySelector(".buttonWrapper");
+  const ballWrappers = Array.from(
+    buttonWrapper.querySelectorAll(".ballWrapper")
+  );
+
+  // Shuffle function using Fisher-Yates algorithm
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
+    return array;
+  }
 
-    const noteA = new Howl({
-        src: ['./audio/key01.ogg']
-    })
-    const noteB = new Howl({
-        src: ['./audio/key02.ogg']
-    })
-    const noteC = new Howl({
-        src: ['./audio/key03.ogg']
-    })
-    const noteD = new Howl({
-        src: ['./audio/key04.ogg']
-    })
-    const noteE = new Howl({
-        src: ['./audio/key05.ogg']
-    })
-    const noteF = new Howl({
-        src: ['./audio/key06.ogg']
-    })
-    const noteG = new Howl({
-        src: ['./audio/key07.ogg']
-    })
+  // Shuffle ballWrappers array
+  const shuffledBallWrappers = shuffle(ballWrappers);
 
-    const fxSound = () => {
-        updateNote();
-        switch (noteNumber) {
-            case 0:
-                noteA.play()
-                break;
-            case 1:
-                noteB.play()
-            case 2:
-                noteC.play()
-                break;
-            case 3:
-                noteD.play()
-                break;
-            case 4:
-                noteE.play()
-                break;
-            case 5:
-                noteF.play()
-                break;
-            case 6:
-                noteG.play()
-                break;
-            default:
-                noteA.play()
-        }
+  // Remove all ballWrapper elements from buttonWrapper
+  ballWrappers.forEach((ballWrapper) => buttonWrapper.removeChild(ballWrapper));
 
-    }
+  // Append shuffled ballWrapper elements back to buttonWrapper
+  shuffledBallWrappers.forEach((ballWrapper) =>
+    buttonWrapper.appendChild(ballWrapper)
+  );
 
+// Keyboard
 
+const keyboardSoundSrc = [
+    "./audio/synthSamples/synthSound1.wav",
+    "./audio/synthSamples/synthSound2.wav",
+    "./audio/synthSamples/synthSound3.wav",
+    "./audio/synthSamples/synthSound4.wav",
+    "./audio/synthSamples/synthSound5.wav"
+  ];
+  
+  let currentSoundIndex = 0;
+  let keyboardSound = new Howl({ src: [keyboardSoundSrc[currentSoundIndex]] });
+  
+  const loadSound = (index) => {
+    keyboardSound.unload();
+    keyboardSound = new Howl({ src: [keyboardSoundSrc[index]] });
+  };
+  
+  document.getElementById("cycleSound").addEventListener("click", () => {
+    currentSoundIndex = (currentSoundIndex + 1) % keyboardSoundSrc.length;
+    loadSound(currentSoundIndex);
+  });
+  
+  const pitches = {
+    key1: Math.pow(2, 0 / 12), // C
+    key2: Math.pow(2, 1 / 12), // C#
+    key3: Math.pow(2, 2 / 12), // D
+    key4: Math.pow(2, 3 / 12), // D#
+    key5: Math.pow(2, 4 / 12), // E
+    key6: Math.pow(2, 5 / 12), // F
+    key7: Math.pow(2, 6 / 12), // F#
+    key8: Math.pow(2, 7 / 12), // G
+    key9: Math.pow(2, 8 / 12), // G#
+    key10: Math.pow(2, 9 / 12), // A
+    key11: Math.pow(2, 10 / 12), // A#
+    key12: Math.pow(2, 11 / 12), // B
+  };
+  
+  const playSound = (pitch) => {
+    keyboardSound.rate(pitch);
+    keyboardSound.play();
+  };
+  
+  document.querySelectorAll(".key").forEach((key) => {
+    key.addEventListener("click", () => {
+      const pitch = pitches[key.getAttribute("data-sound")];
+      playSound(pitch);
+    });
+  });
+  
 
+  // Sound
+  let noteNumber = parseInt(
+    window.localStorage.getItem("localNumber") || "0",
+    10
+  );
+
+  // FX Sounds
+  const fxSoundSrc = "./audio/synthSamples/synthSound2.wav";
+  const fxSoundHowl = new Howl({ src: [fxSoundSrc] });
+
+  const updateNote = () => {
+    noteNumber = (noteNumber + 1) % 12;
+    window.localStorage.setItem("localNumber", noteNumber);
+  };
+
+  const fxSound = () => {
+    updateNote();
+    const pitch = Math.pow(2, noteNumber / 12); // Calculate pitch based on noteNumber
+    fxSoundHowl.rate(pitch);
+    fxSoundHowl.play();
+  };
+
+  const attachHoverEvents = () => {
+    const hoverElements = document.querySelectorAll(".ballWrapper");
+    hoverElements.forEach((element) => {
+      element.addEventListener("mouseenter", fxSound);
+    });
+  };
+
+  const attachClickEvents = () => {
+    const links = document.getElementsByTagName("a");
     for (let i = 0, il = links.length; i < il; i++) {
-        links[i].onclick = clickHandler;
+      links[i].onclick = clickHandler;
+    }
+  };
+
+  function clickHandler(event) {
+    fxSound();
+    event.preventDefault();
+
+    const travelTo = this.getAttribute("href");
+    const animOut = document.getElementsByClassName("animateOut");
+    for (let i = 0; i < animOut.length; i++) {
+      animOut[i].classList.add("out");
     }
 
-    function clickHandler(event) {
-        fxSound();
-        event.preventDefault();
+    setTimeout(() => {
+      window.location.href = travelTo;
+    }, 500);
+  }
 
-        let travelTo = this.getAttribute("href");
-
-        // add `s` to `Element`
-        let animOut = document.getElementsByClassName("animateOut");
-
-        // iterate `animOut` elements
-        for (let i = 0; i < animOut.length; i++) {
-            // add `out` `className` to `animOut` element at index `i`
-            animOut[i].classList.add("out");
-        };
-
-        // Delay page out until the animation finishes
-        setTimeout(function () {
-            window.location.href = travelTo;
-        }, 500);
+  /* Detect inactivity and change URL */
+  let inactivityTime = function () {
+    let time;
+    const resetTimer = () => {
+      clearTimeout(time);
+      time = setTimeout(() => console.log("You are now logged out."), 3000);
     };
-    /* Detectar inactividad y cambiar de URL */
 
-    let inactivityTime = function () {
-        let time;
-        window.onload = resetTimer;
-        // DOM Events
-        document.onmousemove = resetTimer;
-        document.onkeypress = resetTimer;
+    document.onmousemove = resetTimer;
+    document.onkeypress = resetTimer;
+  };
+  inactivityTime();
 
-        function logout() {
-            alert("You are now logged out.")
-            //location.href = 'logout.html'
-        }
+  /* Change background on clicks */
+  const changeBackground = function () {
+    const container = document.getElementById("container");
+    container.className = container.className === this.id ? "white" : this.id;
+  };
 
-        function resetTimer() {
-            clearTimeout(time);
-            time = setTimeout(logout, 3000)
-            // 1000 milliseconds = 1 seconds
-        }
+  const colorChangeItems = document.getElementsByClassName("color-change");
+  for (let i = 0; i < colorChangeItems.length; i++) {
+    colorChangeItems[i].addEventListener("click", changeBackground);
+  }
+
+  /* Show and hide popups */
+  const showProjects = () => {
+    document.getElementById("proyectos").className = "show";
+    showOverlay();
+  };
+
+  const showOverlay = () => {
+    document.getElementById("overlay").classList.add("show");
+  };
+
+  const cerrarProyectos = () => {
+    document.getElementById("proyectos").className = "hide";
+    hideOverlay();
+  };
+
+  const hideOverlay = () => {
+    document.getElementById("overlay").classList.remove("show");
+  };
+
+  const cerrarPopper = () => {
+    backSound();
+    hideOverlay();
+    const elements = document.getElementsByClassName("show");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("show");
     }
+    const sounds = document.getElementsByTagName("audio");
+    for (let i = 0; i < sounds.length; i++) sounds[i].pause();
+  };
 
+  const showPopper = function () {
+    const idToShow = this.getAttribute("data-popTarget");
+    document.getElementById(idToShow).classList.add("show");
+    showOverlay();
+  };
 
-    /* Cambiar el fondo con los clicks */
-    const changeBackground = function (e) {
-        const containerClass = document.getElementById("container").className;
-        if (containerClass == this.id) {
-            document.getElementById("container").className = "white";
-        } else {
-            document.getElementById("container").className = this.id;
-        }
+  document.querySelectorAll(".lab-item").forEach((item) => {
+    item.addEventListener("click", showPopper, false);
+  });
+
+  /* Change animation type after circles animation */
+  const addAnimation = () => {
+    const elements = [
+      ...document.getElementsByClassName("ball-item"),
+      ...document.getElementsByClassName("ball-itemAlt"),
+    ];
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove(
+        "animate__fadeInLeft",
+        "animate__fadeInRight"
+      );
+      elements[i].classList.add("animate__pulse", "animate__infinite");
     }
+  };
 
-    let items = document.getElementsByClassName('color-change');
-    for (let i = 0; i < items.length; i++) {
-        items[i].addEventListener('click', changeBackground);
+  setTimeout(addAnimation, 1500);
+
+  const addAnimation2 = () => {
+    const elements = document.getElementsByClassName("category-item-link");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("animate__flipInX");
+      elements[i].classList.add("animate__pulse", "animate__infinite");
     }
+  };
 
-    /* Mostrar y ocultar los popups */
-    const showProjects = function () {
-        document.getElementById("proyectos").className = "show"
-        showOverlay()
-    }
+  setTimeout(addAnimation2, 1500);
 
-    const showOverlay = function () {
-        document.getElementById("overlay").classList.add("show")
-    }
+  const sobreNosotros = document.getElementById("sobrenosotros");
+  if (sobreNosotros) {
+    sobreNosotros.addEventListener("click", fxSound);
+  }
 
-    const cerrarProyectos = function () {
-        document.getElementById("proyectos").className = "hide";
-        hideOverlay()
-
-    }
-
-    const hideOverlay = function () {
-        document.getElementById("overlay").classList.remove("show")
-    }
-
-    const cerrarPopper = function () {
-        backSound();
-        hideOverlay();
-        let elements = document.getElementsByClassName("show")
-        for (i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("show")
-        }
-        let sounds = document.getElementsByTagName('audio');
-        for (i = 0; i < sounds.length; i++) sounds[i].pause();
-
-    }
-
-    const showPopper = function () {
-        let idToShow = this.getAttribute("data-popTarget")
-        document.getElementById(idToShow).classList.add("show")
-        showOverlay()
-    }
-
-    /* Detectar interaccion y lanzar popups */
-    let elements = document.querySelectorAll(".lab-item").forEach(item => {
-        item.addEventListener("click", showPopper, false)
-    })
-
-    /* Cambiar tipo de animación posterior a la entrada de los círculos del menú principal */
-
-    const addAnimation = function () {
-        let elements = document.getElementsByClassName("ball-item");
-        for (i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("animate__fadeInLeft", "animate__fadeInRight")
-            elements[i].classList.add("animate__pulse", "animate__infinite")
-
-        }
-    }
-
-    setTimeout(() => { addAnimation() }, 1500);
-
-    const addAnimation2 = function () {
-        let elements = document.getElementsByClassName("category-item-link");
-        for (i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("animate__flipInX")
-            elements[i].classList.add("animate__pulse", "animate__infinite")
-        }
-    }
-
-    setTimeout(() => { addAnimation2() }, 1500);
-
-
-    const sobreNosotros = document.getElementById('sobrenosotros');
-    if (sobreNosotros) {
-        sobreNosotros.addEventListener("click", function () {
-            fxSound();
-        })
-    }
-
-
-    const hoverElements = document.getElementsByClassName("lab-item");
-
-    for (let i = 0; i < hoverElements.length; i++) {
-        hoverElements[i].addEventListener('mouseenter', function () {
-            fxSound()
-        });
-    }
-
-    const hoverElements2 = document.getElementsByClassName("category-item");
-
-    for (let i = 0; i < hoverElements2.length; i++) {
-        hoverElements2[i].addEventListener('mouseenter', function () {
-            fxSound()
-        });
-    }
+  // Initialize event listeners
+  attachHoverEvents();
+  attachClickEvents();
 };
-

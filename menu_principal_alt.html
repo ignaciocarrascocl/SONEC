@@ -48,7 +48,7 @@
     <!-- END HEADR -->
     <!-- SIDE BAR -->
     <div id="sidebar">
-        <h1 class="mb-4">Laboratorios creativos</h1>
+        <h1 class="mb-4">Labs</h1>
 
         <!-- Filters -->
         <div class="mb-4">
@@ -77,66 +77,64 @@
     </div>
     <div class="buttonWrapper">
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-1s" id="item_1">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft animate__delay-1s" id="item_1">
+                <div class="decorationAlt"></div>
                 <span>Artes</span>
             </div>
         </a>
         <a class="ballWrapper" href="cat_azul.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-2s" id="item_2">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft animate__delay-2s" id="item_2">
+                <div class="decorationAlt"></div>
                 <span>Ciencias</span>
             </div>
         </a>
         <div class="ballWrapper color-change animate__animated animate__backInDown" id="blue">
-            <i class="bi "></i>
+            <i class="bi bi-paint-bucket"></i>
         </div>
 
         <a class="ballWrapper" href="cat_rojo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft" id="item_3">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft" id="item_3">
+                <div class="decorationAlt"></div>
                 <span>Comunicación</span>
             </div>
         </a>
-        <div class="ballWrapper color-change animate__animated animate__backInDown" id="yellow"> <i class="bi "></i>
+        <div class="ballWrapper color-change animate__animated animate__backInDown" id="yellow"> <i
+                class="bi bi-paint-bucket"></i>
         </div>
 
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-1s" id="item_4">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft animate__delay-1s" id="item_4">
+                <div class="decorationAlt"></div>
                 <span>Derechos</span>
             </div>
         </a>
 
         <a class="ballWrapper" href="cat_rojo.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft animate__delay-2s" id="item_5">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft animate__delay-2s" id="item_5">
+                <div class="decorationAlt"></div>
                 <span>Participación</span>
             </div>
         </a>
-        <div class="ballWrapper color-change animate__animated animate__backInDown" id="red"> <i class="bi "></i>
+        <div class="ballWrapper color-change animate__animated animate__backInDown" id="red"> <i
+                class="bi bi-paint-bucket"></i>
         </div>
         <a class="ballWrapper" href="cat_azul.html">
-            <div class="ball-item  animate__animated animate__fadeInLeft" id="item_6">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInLeft" id="item_6">
+                <div class="decorationAlt"></div>
                 <span>Sustentabilidad</span>
             </div>
         </a>
         <a class="ballWrapper" href="cat_amarillo.html">
-            <div class="ball-item  animate__animated animate__fadeInRight animate__delay-1s" id="item_7">
-                <div class="decoration"></div>
+            <div class="ball-itemAlt  animate__animated animate__fadeInRight animate__delay-1s" id="item_7">
+                <div class="decorationAlt"></div>
                 <span>Tecnología</span>
             </div>
         </a>
-        <div class="ballWrapper ripple animate__animated animate__backInDown blackBall" id="drumMachineActivator"> <i
-                class="bi "></i>    <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <div class="ballWrapper animate__animated animate__backInDown blackBall" id="drumMachineActivator"> <i
+                class="bi bi-cassette"></i>
         </div>
         <div class="ballWrapper animate__animated animate__backInDown blackBall" id="keyboardActivator"> <i
-                class="bi "></i>
+                class="bi bi-music-note-beamed"></i>
         </div>
     </div>
 
@@ -146,14 +144,15 @@
     <div id="drum_machine" class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="kick" style="width: 80px; height: 80px;">
-                    Kick</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="snare" style="width: 80px; height: 80px;">
-                    Snare</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="hihat" style="width: 80px; height: 80px;">
-                    Hi-Hat</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="perc" style="width: 80px; height: 80px;">
-                    Perc</div>
+
+                <div class="pad btn btn-dark m-2 rounded" data-sound="kick" style="width: 80px; height: 80px;">Kick
+                </div>
+                <div class="pad btn btn-dark m-2 rounded" data-sound="snare" style="width: 80px; height: 80px;">Snare
+                </div>
+                <div class="pad btn btn-dark m-2 rounded" data-sound="hihat" style="width: 80px; height: 80px;">Hi-Hat
+                </div>
+                <div class="pad btn btn-dark m-2 rounded" data-sound="perc" style="width: 80px; height: 80px;">Perc
+                </div>
             </div>
         </div>
         <div class="row mt-4">
@@ -191,24 +190,21 @@
         </div>
         <div class="row mt-4">
             <div class="col-12 text-center">
-                <button id="play" class="btn btn-success m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-play-fill"></i>
+                <button id="play" class="btn btn-success m-2">
+                    <i class="fas fa-play"></i> Play
                 </button>
-                <button id="stop" class="btn btn-danger m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-stop-fill"></i>
+                <button id="stop" class="btn btn-danger m-2">
+                    <i class="fas fa-stop"></i> Stop
                 </button>
-                <button id="reset" class="btn btn-warning m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-arrow-clockwise"></i>
+                <button id="reset" class="btn btn-warning m-2">
+                    <i class="fas fa-redo"></i> Reset
                 </button>
             </div>
         </div>
     </div>
-
     <div id="keyboard">
         <div class="container">
             <div class="row no-gutters">
-                <button id="cycleSound" class="btn btn-primary">Cycle Sound</button>
-
                 <div class="col-3 p-2">
                     <div class="key btn btn-dark rounded whiteKey" data-sound="key1">Do</div>
                 </div>
