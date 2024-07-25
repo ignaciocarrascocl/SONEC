@@ -603,6 +603,7 @@ div#item_proyectos span {
   min-height: 100px;
   max-width: 150px;
   margin: 5%;
+  cursor: pointer;
 }
 .sequencer-button.playhead {
   background-color: #007bff;

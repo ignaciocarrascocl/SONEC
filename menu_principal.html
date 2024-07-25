@@ -263,13 +263,19 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+        <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+        <script src="js/script.js"></script>
     <script src="js/drumMachine.js"></script>
     <script src="js/menu.js"></script>
     <script>
+window.onload = function() {
+    const SW = new SiriWave({
+  container: document.getElementById("keyboardActivator"),
+  autostart: true,
+  cover: true
+  });
 
-        // particles
-        tsParticles
+  tsParticles
             .loadJSON("menuparticles", "js/menu.json")
             .then((tsparticles) => {
                 console.log("callback - tsparticles config loaded");
@@ -277,6 +283,11 @@
             .catch((error) => {
                 console.error(error);
             });
+
+
+};
+        // particles
+
     </script>
 </body>
 

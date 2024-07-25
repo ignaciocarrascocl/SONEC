@@ -1,4 +1,6 @@
 window.onload = function () {
+
+    
   $("#drumMachineActivator").click(function () {
     $("#drum_machine").addClass("active");
     $("#overlay").addClass("active");
