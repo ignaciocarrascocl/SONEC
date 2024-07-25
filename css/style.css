@@ -606,11 +606,7 @@ div#item_proyectos span {
   margin: 5%;
   cursor: pointer;
 }
-.sequencer-button.playhead {
-  background-color: #007bff;
-  color: white;
-  border: 2px solid #0056b3;
-}
+
 .buttonWrapper {
   display: flex;
   flex-direction: row;
@@ -658,8 +654,6 @@ div#item_proyectos span {
   transition: all 0.5s linear;
   padding-left: 7%;
 }
-
-
 
 .campo-item span {
   font-weight: bold;
@@ -853,27 +847,6 @@ h5.card-title {
     color: black; /* Optional: to keep the text in the dropdowns black */
 }
 
-#drum_machine, #keyboard {
-    position: fixed;
-    width: 95%;
-    max-width: 600px;
-    background: #f8f9fa;
-    padding: 20px;
-    transition: top 0.8s ease;
-    z-index: 1000;
-    overflow-y: auto;
-    top: -100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    border: 5px solid black;
-}
-
-#drum_machine.active,
-#keyboard.active {
-  top: 50%;
-}
-
 #sidebar.active {
   left: 0;
   /* Show sidebar when active */
@@ -958,6 +931,26 @@ h5.card-title {
 }
 
 /* drummachine */
+#drum_machine, #keyboard {
+  position: fixed;
+  width: 95%;
+  max-width: 600px;
+  background: #f8f9fa;
+  padding: 20px;
+  transition: top 0.8s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+#drum_machine.active,
+#keyboard.active {
+top: 50%;
+}
 
 #drum_machine .pad {
     background-color: #072eb9;
@@ -1048,7 +1041,9 @@ h5.card-title {
     outline: none;
     width: 100%;
 }
-
+#drum_machine td {
+  padding: 0;
+}
 #drum_machine .form-label {
     font-weight: bold;
     color: #072eb9;

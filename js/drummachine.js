@@ -120,16 +120,21 @@ document.addEventListener('DOMContentLoaded', () => {
     setVolume(document.getElementById('volume').value / 100);
 
     // Sequencer table setup
-    const soundTypes = ['kick', 'snare', 'hihat', 'perc'];
+    const soundTypes = [
+        { label: 'A', sound: 'kick' },
+        { label: 'B', sound: 'snare' },
+        { label: 'C', sound: 'hihat' },
+        { label: 'D', sound: 'perc' }
+    ];
     const tbody = document.querySelector('#sequencer tbody');
-
-    soundTypes.forEach(sound => {
+    
+    soundTypes.forEach(({ label, sound }) => {
         const row = document.createElement('tr');
         const headerCell = document.createElement('th');
         headerCell.scope = 'row';
-        headerCell.textContent = sound.charAt(0).toUpperCase() + sound.slice(1);
+        headerCell.textContent = label;
         row.appendChild(headerCell);
-
+    
         for (let i = 1; i <= steps; i++) {
             const cell = document.createElement('td');
             const button = document.createElement('button');
@@ -146,11 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon.className = 'bi bi-circle';
                 }
             };
-
+    
             cell.appendChild(button);
             row.appendChild(cell);
         }
-
+    
         tbody.appendChild(row);
     });
+    
+    
 });
