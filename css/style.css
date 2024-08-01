@@ -164,7 +164,9 @@ a {
 .cat-yellow .crooked,
 .cat-yellow .left,
 .cat-yellow .rounded-back {
-  background: #ffb800;
+  background-image: url(img/imagenAmarilla.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .cat-red .header,
@@ -598,14 +600,50 @@ div#item_proyectos span {
 }
 
 .ballWrapper {
-    animation: 0.5s all;
-  min-width: 100px;
-  width: 15%;
-  min-height: 100px;
-  max-width: 150px;
-  margin: 5%;
+  animation: 0.5s all;
   cursor: pointer;
 }
+
+.ballWrapper_1x {
+  min-width: 40px;
+  max-width: 50px;
+  min-height: 40px;
+  width: 10%;
+  margin: 2%;
+}
+
+.ballWrapper_2x {
+  min-width: 60px;
+  max-width: 75px;
+  min-height: 60px;
+  width: 10%;
+  margin: 3%;
+}
+
+.ballWrapper_3x {
+  min-width: 80px;
+  max-width: 100px;
+  min-height: 80px;
+  width: 12%;
+  margin: 4%;
+}
+
+.ballWrapper_4x {
+  min-width: 90px;
+  max-width: 120px;
+  min-height: 90px;
+  width: 13%;
+  margin: 4.5%;
+}
+
+.ballWrapper_5x {
+  min-width: 100px;
+  max-width: 150px;
+  min-height: 100px;
+  width: 15%;
+  margin: 5%;
+}
+
 
 .buttonWrapper {
   display: flex;
@@ -624,6 +662,12 @@ div#item_proyectos span {
 }
 
 #yellow .ball-item {
+  background-image: url(img/imagenAmarilla.png);
+  background-size: cover;
+  transition: all 0.5s;
+}
+
+#yellow .ball-item:hover {
   background: #ffb800;
 }
 
