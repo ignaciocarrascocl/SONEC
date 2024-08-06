@@ -238,12 +238,7 @@ const keyboardSoundSrc = [
   };
 
   setTimeout(addAnimation2, 1500);
-
-  const sobreNosotros = document.getElementById("sobrenosotros");
-  if (sobreNosotros) {
-    sobreNosotros.addEventListener("click", fxSound);
-  }
-
+  
   // Initialize event listeners
   attachHoverEvents();
   attachClickEvents();

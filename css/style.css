@@ -164,9 +164,7 @@ a {
 .cat-yellow .crooked,
 .cat-yellow .left,
 .cat-yellow .rounded-back {
-  background-image: url(img/imagenAmarilla.png);
-  background-size: cover;
-  background-position: center;
+  background: #ffb800;
 }
 
 .cat-red .header,
@@ -664,12 +662,28 @@ div#item_proyectos span {
 #yellow .ball-item {
   background-image: url(img/imagenAmarilla.png);
   background-size: cover;
-  transition: all 0.5s;
+  transition: background-color 0.5s; /* Transition for background color only */
+  position: relative; /* Positioning context for pseudo-element */
 }
 
-#yellow .ball-item:hover {
-  background: #ffb800;
+#yellow .ball-item::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 184, 0, 0); /* Initial state: transparent yellow */
+  transition: background-color 0.5s; /* Smooth transition for background color */
+  z-index: 1; /* Ensures it sits on top of the background image */
+  border-radius: 50%;
+
 }
+
+#yellow .ball-item:hover::before {
+  background-color: rgba(255, 184, 0, 1); /* Hover state: semi-transparent yellow */
+}
+
 
 .ball-item:after {
   content: "";
