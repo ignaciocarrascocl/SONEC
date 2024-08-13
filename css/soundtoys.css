@@ -3,7 +3,7 @@
     position: fixed;
     width: 95%;
     max-width: 600px;
-    background: #f8f9fa;
+    background: #000000;
     padding: 20px;
     transition: top 0.8s ease;
     z-index: 1000;
@@ -114,7 +114,7 @@
   }
   #drum_machine .form-label {
       font-weight: bold;
-      color: #072eb9;
+      color: #ffffff;
       margin-bottom: 10px;
   }
   
@@ -161,12 +161,11 @@
   
   .whiteKey {
     background-color: #ffffff;
-    color: black;
+    color: black
   }
   
   .blackKey {
-    background-color: #000000;
-    color: white;
+    background-color: #414141;
   }
   
   #cycleSound {
@@ -189,3 +188,8 @@
   
 
 /* End keyboard */
+
+#keyboard h2, #drum_machine h2 {
+    font-weight: bold;
+    color: white
+}
