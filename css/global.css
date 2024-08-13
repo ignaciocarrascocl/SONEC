@@ -1,0 +1,80 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&display=swap");
+
+/* Root Variables */
+:root {
+  --animate-delay: 0.2s;
+  --animate-duration: 1.5s;
+}
+
+/* General Styles */
+* {
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+
+body#container, html {
+  margin: 0;
+  padding: 0;
+}
+
+audio {
+  width: 100%;
+}
+
+/* Typography */
+h1 {
+  font-family: Fjalla One;
+  padding: 3%;
+  font-weight: 400;
+}
+
+h5.card-title {
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Color Themes */
+.white {
+  background: white;
+}
+
+.red {
+  background: #c01001;
+}
+
+.yellow {
+  background: #ffb800;
+}
+
+.blue {
+  background: #072eb9;
+}
+
+/* Animations */
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
+}
+
+/* Miscellaneous */
+span.more {
+  font-size: 400%;
+}
+
+span.rounded-back {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 100%;
+}
+
+span.texto {
+  font-size: 100%;
+  padding-left: 5%;
+  padding-top: 10px;
+}

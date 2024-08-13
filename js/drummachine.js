@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sound setup
     const sounds = {
         kick: ['CYCdh_ElecK01-Kick01.wav'],
-        snare: ['CYCdh_ElecK01-Snr01.wav'],
-        hihat: ['CYCdh_ElecK01-ClHat01.wav'],
+        snare: ['minimal-pop-click-ui-2-198302.mp3'],
+        hihat: ['egg-crack18-104552.mp3'],
         perc: ['CYCdh_ElecK01-Tom01.wav']
     };
 
