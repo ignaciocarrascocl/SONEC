@@ -29,31 +29,35 @@ window.onload = function () {
     }
   });
 
-  // Shuffler
   const buttonWrapper = document.querySelector(".buttonWrapper");
-  const ballWrappers = Array.from(
-    buttonWrapper.querySelectorAll(".ballWrapper")
-  );
 
-  // Shuffle function using Fisher-Yates algorithm
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+  if (buttonWrapper) {
+    const ballWrappers = Array.from(
+      buttonWrapper.querySelectorAll(".ballWrapper")
+    );
+  
+    // Shuffle function using Fisher-Yates algorithm
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     }
-    return array;
-  }
-
-  // Shuffle ballWrappers array
-  const shuffledBallWrappers = shuffle(ballWrappers);
-
-  // Remove all ballWrapper elements from buttonWrapper
-  ballWrappers.forEach((ballWrapper) => buttonWrapper.removeChild(ballWrapper));
-
-  // Append shuffled ballWrapper elements back to buttonWrapper
-  shuffledBallWrappers.forEach((ballWrapper) =>
-    buttonWrapper.appendChild(ballWrapper)
-  );
+  
+    // Shuffle ballWrappers array
+    const shuffledBallWrappers = shuffle(ballWrappers);
+  
+    // Remove all ballWrapper elements from buttonWrapper
+    ballWrappers.forEach((ballWrapper) =>
+      buttonWrapper.removeChild(ballWrapper)
+    );
+  
+    // Append shuffled ballWrapper elements back to buttonWrapper
+    shuffledBallWrappers.forEach((ballWrapper) =>
+      buttonWrapper.appendChild(ballWrapper)
+    );
+  } 
 
   // Initialize event listeners
   attachHoverEvents();
@@ -85,20 +89,8 @@ for (let i = 0; i < colorChangeItems.length; i++) {
   colorChangeItems[i].addEventListener("click", changeBackground);
 }
 
-/* Show and hide popups */
-const showProjects = () => {
-  document.getElementById("proyectos").className = "show";
-  showOverlay();
-  popOpenSound(); // Play a sound when showing projects
-};
-
 const showOverlay = () => {
   document.getElementById("overlay").classList.add("show");
-};
-
-const cerrarProyectos = () => {
-  document.getElementById("proyectos").className = "hide";
-  hideOverlay();
 };
 
 const hideOverlay = () => {

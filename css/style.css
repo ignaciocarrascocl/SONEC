@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&display=swap");
 @import url("balls.css"); /* Import the ball-related styles */
 @import url("soundtoys.css"); /* Import the sound-related styles */
+@import url("categories.css"); /* Import the sound-related styles */
+
 
 /* Root Variables */
 :root {
@@ -27,6 +29,8 @@ audio {
 /* Navigation Styles */
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   background-color: #000000 !important;
+
+  z-index: 10;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -166,34 +170,6 @@ span.pop-description {
 
 .top-menu a img {
   margin-right: 10px;
-}
-
-/* Category Styles */
-.cat-yellow .header,
-.cat-yellow .crooked,
-.cat-yellow .left,
-.cat-yellow .rounded-back,
-.cat-red .header,
-.cat-red .crooked,
-.cat-red .left,
-.cat-red .rounded-back,
-.cat-blue .header,
-.cat-blue .crooked,
-.cat-blue .left,
-.cat-blue .rounded-back {
-  background: inherit;
-}
-
-.cat-red .description span,
-.cat-blue .description span,
-.cat-blue .left,
-.cat-red .left {
-  color: white;
-}
-
-.crooked {
-  height: 50px;
-  clip-path: polygon(100% 0, 0 0, 0 50%);
 }
 
 /* Laboratory Item */

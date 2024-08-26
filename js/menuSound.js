@@ -30,10 +30,16 @@ const keyboardSoundSrc = [
     keyboardSound = new Howl({ src: [keyboardSoundSrc[index]] });
   };
   
-  document.getElementById("cycleSound").addEventListener("click", () => {
-    currentSoundIndex = (currentSoundIndex + 1) % keyboardSoundSrc.length;
-    loadSound(currentSoundIndex);
-  });
+  const cycleSoundButton = document.getElementById("cycleSound");
+
+  if (cycleSoundButton) {
+    cycleSoundButton.addEventListener("click", () => {
+      currentSoundIndex = (currentSoundIndex + 1) % keyboardSoundSrc.length;
+      loadSound(currentSoundIndex);
+    });
+  }
+  
+
   
   const pitches = {
     key1: Math.pow(2, 0 / 12), // C
