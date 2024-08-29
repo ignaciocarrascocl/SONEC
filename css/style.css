@@ -1,5 +1,5 @@
 /* Imports */
-@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&display=swap");
 @import url("balls.css"); /* Import the ball-related styles */
 @import url("soundtoys.css"); /* Import the sound-related styles */
@@ -48,7 +48,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   border: 0;
   border-radius: 20px;
   padding: 5px 20px;
-  font-family: Fjalla One;
+  font-family: "Fjalla One", sans-serif;
 }
 
 /* Popper Styles */
@@ -293,6 +293,8 @@ span.texto {
 .home h1 {
   text-align: center;
   font-size: 250%;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
 }
 
 .home h1 a {
@@ -393,6 +395,7 @@ video#myVideo {
 h1 {
   font-family: Fjalla One;
   padding: 3%;
+  text-transform: uppercase;
   font-weight: 400;
 }
 

@@ -149,7 +149,7 @@
   }
   
   #blue .ball-item {
-    background-image: url(img/bubblesBKG/5.png);
+    background-color: rgba(7, 46, 185, 1); /* Initial state: transparent blue */
     background-size: cover;
     transition: background-color 0.5s; /* Transition for background color only */
     position: relative; /* Positioning context for pseudo-element */
@@ -173,7 +173,7 @@
   }
   
   #red .ball-item {
-    background-image: url(img/bubblesBKG/6.png);
+    background-color: rgba(192, 16, 1, 1); /* Initial state: transparent red */
     background-size: cover;
     transition: background-color 0.5s; /* Transition for background color only */
     position: relative; /* Positioning context for pseudo-element */
@@ -197,7 +197,7 @@
   }
   
   #yellow .ball-item {
-    background-image: url(img/bubblesBKG/2.png);
+    background-color: rgba(255, 184, 0, 1); /* Initial state: transparent yellow */
     background-size: cover;
     transition: background-color 0.5s; /* Transition for background color only */
     position: relative; /* Positioning context for pseudo-element */

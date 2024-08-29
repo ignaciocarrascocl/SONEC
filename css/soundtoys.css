@@ -4,7 +4,7 @@
   position: fixed;
   width: 95%;
   max-width: 600px;
-  background: #000000;
+  background: white;
   padding: 20px;
   transition: top 0.8s ease;
   z-index: 1000;
@@ -14,6 +14,7 @@
   transform: translate(-50%, -50%);
   border-radius: 10px;
   border: 5px solid black;
+  color: black
 }
 
 #drum_machine.active,
@@ -111,9 +112,7 @@
   outline: none;
   width: 100%;
 }
-table#sequencer {
-    filter: invert(1);
-}
+
 
 #drum_machine td {
   padding: 0;
@@ -167,12 +166,18 @@ table#sequencer {
 }
 
 .whiteKey {
-  background-color: #ffffff;
+  background-color: #ffb800;
   color: black;
 }
 
-.blackKey {
-  background-color: #414141;
+.redKey {
+  background-color: #c01001;
+  color: black;
+}
+
+.blueKey {
+  background-color: #072eb9;
+  color: black;
 }
 
 #cycleSound {
@@ -181,22 +186,39 @@ table#sequencer {
   border-radius: 50%; /* Make the button circular */
   margin: 0 auto; /* Center the button horizontally */
   display: block; /* Ensure the button is treated as a block element */
-  background-color: #ffb800; /* Change the button color */
+  background-color: black; /* Change the button color */
   border: none; /* Remove the default border */
   color: black; /* Ensure the text color is white */
   font-weight: bold;
   font-size: 1.2em; /* Increase the font size of the button text */
   cursor: pointer; /* Add a pointer cursor on hover */
+  color: white
 }
 
 #cycleSound:hover {
-  background-color: #c01001;
+  background-color: white;
+  color: black
 }
 
 /* End keyboard */
 
-#keyboard h2,
-#drum_machine h2 {
-  font-weight: bold;
+/* CSS for the table rows */
+#sequencer tbody tr:nth-child(1) button.btn.btn-light.sequencer-button.active{
+  background-color: #ffb800;
+}
+
+#sequencer tbody tr:nth-child(2) button.btn.btn-light.sequencer-button.active{
+  background-color: #c01001;
+}
+
+#sequencer tbody tr:nth-child(3) button.btn.btn-light.sequencer-button.active{
+  background-color: #072eb9;
+}
+
+#sequencer tbody tr:nth-child(4) button.btn.btn-light.sequencer-button.active{
+  background-color: #ffb800;
+}
+
+button.btn.btn-light.sequencer-button.active {
   color: white;
 }
