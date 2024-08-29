@@ -297,8 +297,14 @@ span.texto {
   font-weight: 400;
 }
 
+h2 {
+  font-family: "Fjalla One", sans-serif;
+}
+
 .home h1 a {
   text-decoration: none !important;
+  font-family: "Fjalla One", sans-serif;
+
   color: black;
 }
 
@@ -393,7 +399,7 @@ video#myVideo {
 }
 
 h1 {
-  font-family: Fjalla One;
+  font-family: "Fjalla One", sans-serif;
   padding: 3%;
   text-transform: uppercase;
   font-weight: 400;
