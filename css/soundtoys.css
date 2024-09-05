@@ -19,7 +19,7 @@
 
 #drum_machine.active,
 #keyboard.active {
-  top: 50%;
+  top: 42%;
 }
 
 #drum_machine .pad {
@@ -33,15 +33,15 @@
   width: 80px; /* Ensure this matches the inline style for width */
 }
 
-#drum_machine .pad:hover {
+#drum_machine .pad-yellow:hover {
   background-color: #ffb800;
   color: white;
 }
-
-#drum_machine .pad:active {
+#drum_machine .pad-red:hover {
   background-color: #c01001;
   color: white;
 }
+
 
 #drum_machine #play {
   background-color: #072eb9;
@@ -102,6 +102,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
+  width: 40px
 }
 
 /* Removing borders and improving style for tempo and volume */

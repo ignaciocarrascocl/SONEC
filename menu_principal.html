@@ -26,14 +26,14 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a id="sidebarToggle" class="nav-link" href="#">Buscar laboratorio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre Nosotros</a>
+                            <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
                         </li>
 
                     </ul>
@@ -176,13 +176,13 @@
                 </h2>
                 </div>
             <div class="col-12 text-center">
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="kick" style="width: 80px; height: 80px;">
+                <div class="pad btn pad-yellow btn-dark m-2 rounded-circle" data-sound="kick" >
                     A</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="snare" style="width: 80px; height: 80px;">
+                <div class="pad btn pad-red btn-dark m-2 rounded-circle" data-sound="snare" >
                     B</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="hihat" style="width: 80px; height: 80px;">
+                <div class="pad btn pad-yellow btn-dark m-2 rounded-circle" data-sound="hihat" >
                     C</div>
-                <div class="pad btn btn-dark m-2 rounded-circle" data-sound="perc" style="width: 80px; height: 80px;">
+                <div class="pad btn pad-red btn-dark m-2 rounded-circle" data-sound="perc">
                     D</div>
             </div>
         </div>
@@ -210,24 +210,22 @@
         </div>
         <div class="row mt-4">
             <div class="col-6 text-center">
-                <label for="tempo" class="form-label">Tempo:</label>
                 <input type="range" id="tempo" class="form-range" min="40" max="280" value="120">
 
             </div>
             <div class="col-6 text-center">
-                <label for="volume" class="form-label">Volumen:</label>
                 <input type="range" id="volume" class="form-range" min="0" max="100" value="50">
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-12 text-center">
-                <button id="play" class="btn btn-success m-2 rounded-circle" style="width: 60px; height: 60px;">
+                <button id="play" class="btn btn-success pad-yellow m-2 rounded-circle" style="width: 60px; height: 60px;">
                     <i class="bi bi-play-fill"></i>
                 </button>
                 <button id="stop" class="btn btn-danger m-2 rounded-circle" style="width: 60px; height: 60px;">
                     <i class="bi bi-stop-fill"></i>
                 </button>
-                <button id="reset" class="btn btn-warning m-2 rounded-circle" style="width: 60px; height: 60px;">
+                <button id="reset" class="btn btn-warning pad-red m-2 rounded-circle" style="width: 60px; height: 60px;">
                     <i class="bi bi-arrow-clockwise"></i>
                 </button>
             </div>

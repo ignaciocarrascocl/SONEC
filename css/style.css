@@ -322,6 +322,10 @@ h2 {
   width: 4%;
 }
 
+ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+  padding-left: 18px;
+}
+
 /* Overlay */
 #overlay.active {
   transition: all 1s linear;
@@ -329,7 +333,7 @@ h2 {
   height: 100vh;
   background: black;
   opacity: 0.3;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -338,7 +342,7 @@ h2 {
 /* Back to Home Button */
 .volver_home {
   filter: invert(1);
-  position: absolute;
+  position: fixed;
   top: 86%;
   left: 4%;
 }
