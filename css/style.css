@@ -433,3 +433,10 @@ h5.card-title {
 .blue {
   background: #072eb9;
 }
+
+.container.pt-4.buttonWrapper.text-center {
+  background: white;
+  z-index: 10;
+  position: relative;
+  height: 75vh;
+}

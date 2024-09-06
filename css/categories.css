@@ -1,63 +1,56 @@
 a.category-item-link {
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 a.category-item-link {
-    border: 2px solid black;
-    width: 20%;
-    margin: 2%;
-    height: 140px;
-    color: black;
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 20px;
-    min-width: 180px;
+  border: 2px solid black;
+  width: 20%;
+  margin: 2%;
+  height: 140px;
+  color: black;
+  font-family: "Encode Sans Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 20px;
+  min-width: 180px;
 }
 .category-item {
-    border: 2px solid;
-    height: 140px;
-    border-radius: 20px;
-    margin-top: -15px;
-    margin-left: -15px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  border: 2px solid;
+  height: 140px;
+  border-radius: 20px;
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .category-items {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5%;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+  justify-content: space-evenly;
 }
 
-a.category-item-link {
-    border: 2px solid black;
-    width: 20%;
-    margin: 2%;
-    height: 140px;
-    color: black;
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 20px;
+.blue,
+.cat-blue .header,
+.cat-blue .crooked,
+.cat-blue .left,
+.cat-blue .rounded-back,
+.blue-items a.category-item-link:hover {
+  background: #072eb9 !important;
+  color: white;
+  z-index: 100
 }
 
-.cat-blue .header, .cat-blue .crooked, .cat-blue .left, .cat-blue .rounded-back {
-    background: #072EB9 !important;
+.blue-items a.category-item-link:hover > .category-item {
+    border: 0 !important
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.blue {
-    background: #072EB9 !important;
-    color: white;
+  text-decoration: none;
+  color: inherit;
 }
