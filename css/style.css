@@ -52,25 +52,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 }
 
 /* Popper Styles */
-.popper {
-  position: absolute;
-  bottom: 0;
-  background: white;
-  margin: 3%;
-  border-radius: 50px;
-  font-family: "Encode Sans Condensed", sans-serif;
-  transition: all 1s linear;
-  top: -200%;
-  width: 86%;
-  height: 65vh;
-  z-index: 10;
-}
 
-.popper.show {
-  top: 125px;
-}
-
-.fondoPopper,
+/* .fondoPopper,
 .sobrefondoPopper {
   background: white;
   width: 100%;
@@ -85,48 +68,60 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   top: 20px;
   left: 20px;
 }
-
-.pop-inner {
-  overflow-y: auto;
-  max-height: 84%;
+.fondoPopper {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    border-radius: 25px;
+    border: 2px solid;
 }
 
-.pop-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.sobrefondoPopper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}  
+*/
+
+.popper {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  margin: 3%;
+  border-radius: 25px;
+  width: 94%;
+  height: 80vh;
+  z-index: 10;
+  transition: all 1s linear;
+  top: -200%;
 }
 
-.pop-head h2 {
-  font-size: 30px;
+.like {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
+  background-color: black;
 }
 
-.pop-content {
-  display: flex;
+.like .heart {
+  color: #072EB9;
+}
+
+.like span:nth-child(2) {
   font-size: 16px;
-  height: 75%;
-}
-
-.pop-left,
-.pop-right {
-  flex: 1;
-  max-height: 100%;
-  overflow: auto;
-}
-
-.pop-right {
-  text-align: center;
-  padding: 0 5%;
-}
-
-.pop-right img {
-  width: 100%;
-  margin: 20px 20px 0 0;
-}
-
-span.pop-description {
-  padding-top: 10%;
   display: block;
+  float: right;
+  margin: 7px 0 5px 10px;
+}
+
+.popper.show {
+  top: 12vh;
+}
+
+.playlist {
+  list-style: none;
+  padding-left: 0;
 }
 
 /* Video Container */
@@ -327,7 +322,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 }
 
 /* Overlay */
-#overlay.active {
+#overlay.active, #overlay.show {
   transition: all 1s linear;
   width: 100vw;
   height: 100vh;

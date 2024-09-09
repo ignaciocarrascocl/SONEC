@@ -35,15 +35,26 @@ a.category-item-link {
   justify-content: space-evenly;
 }
 
+.blue-background {
+  background: #072eb9;
+}
+
+.blue-background .inner-menu {
+  color: white !important
+}
+
 .blue,
 .cat-blue .header,
 .cat-blue .crooked,
-.cat-blue .left,
 .cat-blue .rounded-back,
 .blue-items a.category-item-link:hover {
   background: #072eb9 !important;
   color: white;
   z-index: 100
+}
+
+.lab-white-side{
+  background-color: white;
 }
 
 .blue-items a.category-item-link:hover > .category-item {
