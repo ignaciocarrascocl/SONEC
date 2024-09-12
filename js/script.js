@@ -1,6 +1,8 @@
 window.onload = function () {
 
-  pageLoadSound()
+  playPageLoadSound(); // Play the page load sound based on body class
+
+  
   $("#drumMachineActivator").click(function () {
     $("#drum_machine").addClass("active");
     $("#overlay").addClass("active");
@@ -112,7 +114,8 @@ const showPopper = function () {
   const idToShow = this.getAttribute("data-popTarget");
   document.getElementById(idToShow).classList.add("show");
   showOverlay();
-  popOpenSound(); // Play a sound when showing a popper
+  modalOpenSound(); // Play the modal open sound
+  popOpenSound(); // Play the open popper sound
 };
 
 document.querySelectorAll(".lab-item").forEach((item) => {

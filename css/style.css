@@ -93,7 +93,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   height: 80vh;
   z-index: 10;
   transition: all 1s linear;
-  top: -200%;
+  top: -100%;
 }
 
 .like {
@@ -338,7 +338,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 .volver_home {
   filter: invert(1);
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 20px;
 }
 
