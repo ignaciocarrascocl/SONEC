@@ -175,7 +175,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   margin: 5% 20%;
   padding: 10px;
   border-radius: 50px;
-  transition: all 0.3s linear;
+  transition: all 1s linear;
   cursor: pointer;
 }
 
@@ -218,7 +218,7 @@ span.texto {
   height: 100%;
   width: 300px;
   padding: 20px;
-  transition: left 0.3s ease;
+  transition: left 1s linear;
   z-index: 1000;
   overflow-y: auto;
 }
@@ -270,7 +270,7 @@ span.texto {
 
 #labsList .card {
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.5s;
 }
 
 #labsList .card:hover {
@@ -337,9 +337,9 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 /* Back to Home Button */
 .volver_home {
   filter: invert(1);
-  position: fixed;
-  top: 86%;
-  left: 4%;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
 }
 
 .blue .volver_home,
@@ -429,9 +429,8 @@ h5.card-title {
   background: #072eb9;
 }
 
-.container.pt-4.buttonWrapper.text-center {
-  background: white;
+.sobreNosotrosContent > p {
+  background: rgba(255, 255, 255, 0.5);
   z-index: 10;
   position: relative;
-  height: 75vh;
 }

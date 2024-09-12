@@ -34,9 +34,10 @@
 }
 
 #drum_machine .pad-yellow:hover {
-  background-color: #ffb800;
+  background-color: #c01001 !important;
   color: white;
 }
+
 #drum_machine .pad-red:hover {
   background-color: #c01001;
   color: white;
