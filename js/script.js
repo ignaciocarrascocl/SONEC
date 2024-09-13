@@ -1,5 +1,5 @@
-window.onload = function () {
-
+document.addEventListener("DOMContentLoaded", function () {
+  
   playPageLoadSound(); // Play the page load sound based on body class
 
   
@@ -64,7 +64,7 @@ window.onload = function () {
   // Initialize event listeners
   attachHoverEvents();
   attachClickEvents();
-};
+});
 
 /* Detect inactivity and change URL */
 let inactivityTime = function () {
@@ -100,7 +100,12 @@ const hideOverlay = () => {
 };
 
 const cerrarPopper = () => {
-  popCloseSound(); // Play a sound when closing poppers
+  if (document.body.classList.contains("soundType3")) {
+    modalOpenSound(); // Play only the modal open sound (using it for close as well)
+  } else {
+    popCloseSound();   // Play the close popper sound
+  }
+  
   hideOverlay();
   const elements = document.getElementsByClassName("show");
   for (let i = 0; i < elements.length; i++) {
@@ -110,13 +115,20 @@ const cerrarPopper = () => {
   for (let i = 0; i < sounds.length; i++) sounds[i].pause();
 };
 
-const showPopper = function () {
+
+function showPopper() {
   const idToShow = this.getAttribute("data-popTarget");
   document.getElementById(idToShow).classList.add("show");
   showOverlay();
-  modalOpenSound(); // Play the modal open sound
-  popOpenSound(); // Play the open popper sound
-};
+  
+  if (document.body.classList.contains("soundType3")) {
+    modalOpenSound(); // Play only the modal open sound
+  } else {
+    modalOpenSound(); // Play the modal open sound
+    popOpenSound();    // Play the open popper sound
+  }
+}
+
 
 document.querySelectorAll(".lab-item").forEach((item) => {
   item.addEventListener("click", showPopper, false);
