@@ -1,3 +1,4 @@
+// menuSound.js
 // Interaction Sounds
 const interactionSoundSrc = "./audio/UISounds/ui-click-43196.mp3";
 const interactionSoundHowl = new Howl({ src: [interactionSoundSrc] });
@@ -12,6 +13,12 @@ function modalOpenSound() {
   modalOpenHowl.play();
 }
 
+// Bell Sound for Like Button
+const bellSoundSrc = "./audio/UISounds/bell.mp3";
+const bellSoundHowl = new Howl({ src: [bellSoundSrc] });
+function playBellSound() {
+  bellSoundHowl.play();
+}
 
 // Pop Open Sound
 const popOpenSoundSrc = "./audio/UISounds/ui-pop-up-6-197894.mp3";
@@ -131,7 +138,10 @@ const fxSound = () => {
 
 // Event Handlers
 const attachHoverEvents = () => {
-  const hoverElements = document.querySelectorAll(".ball-item");
+  // Select all elements with the classes ball-item, category-item, and lab-item
+  const hoverElements = document.querySelectorAll(".ball-item, .category-item, .lab-item");
+  
+  // Loop through each element and attach the hover event
   hoverElements.forEach((element) => {
     element.addEventListener("mouseenter", fxSound);
   });

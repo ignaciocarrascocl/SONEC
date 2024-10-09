@@ -28,25 +28,29 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="menu_principal.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a id="sidebarToggle" class="nav-link" href="#">Buscar laboratorio</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
                         </li>
-
                     </ul>
-                    <a class="nav-link" href="#">
-                        <img src="css/img/logos/option3.png"
-                            alt="Imagen" style="height: 90px; margin: 10px;">
+                    <a class="nav-link" href="/">
+                        <img src="css/img/logos/option3.png" alt="Imagen" style="height: 90px; margin: 10px;">
+                    </a>
+    
+                    <!-- Add sound toggle icon here -->
+                    <a id="soundToggle" class="nav-link" href="#" >
+                        <img id="soundIcon" src="css/img/volume-up-fill.svg" alt="Sound On" style="height: 30px;">
                     </a>
                 </div>
             </div>
         </nav>
     </div>
+    
+    
     <!-- END HEADR -->
     <!-- SIDE BAR -->
     <div id="sidebar">
@@ -306,6 +310,8 @@
 <script src="js/script.js" defer></script>
 <script src="js/menu.js" defer></script>
 <script src="js/drumMachine.js" defer></script>
+<script src="js/soundToggle.js"></script>
+
 
     <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"

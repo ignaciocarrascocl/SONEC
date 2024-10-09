@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function () {
   
   playPageLoadSound(); // Play the page load sound based on body class

@@ -74,11 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetSequencer() {
-        stopSequencer();
+        stopSequencer();  // Stop the sequencer first
         document.querySelectorAll('.sequencer-button').forEach(button => {
-            button.classList.remove('active');
+            button.classList.remove('active');  // Remove the 'active' class
+    
+            // Reset the icon inside the button back to the unfilled circle
+            const icon = button.querySelector('i');
+            if (icon) {
+                icon.className = 'bi bi-circle';  // Reset the icon class to unfilled circle
+            }
         });
     }
+    
 
     function setVolume(volume) {
         Object.keys(soundPlayers).forEach(key => {

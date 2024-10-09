@@ -23,49 +23,38 @@
   <body id="container" class="vh-100 cat-blue soundType3">
     <div id="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Estación Sensorial CECREA</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a id="sidebarToggle" class="nav-link" href="#"
-                  >Buscar laboratorio</a
-                >
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="sobre_nosotros.html"
-                  >Sobre Nosotros</a
-                >
-              </li>
-            </ul>
-            <a class="nav-link" href="#">
-              <img
-                src="css/img/logos/option3.png"
-                alt="Imagen"
-                style="height: 90px; margin: 10px"
-              />
-            </a>
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Estación Sensorial CECREA</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="menu_principal.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a id="sidebarToggle" class="nav-link" href="#">Buscar laboratorio</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
+                      </li>
+                  </ul>
+                  <a class="nav-link" href="/">
+                      <img src="css/img/logos/option3.png" alt="Imagen" style="height: 90px; margin: 10px;">
+                  </a>
+  
+                  <!-- Add sound toggle icon here -->
+                  <a id="soundToggle" class="nav-link" href="#" >
+                      <img id="soundIcon" src="css/img/volume-up-fill.svg" alt="Sound On" style="height: 30px;">
+                  </a>
+              </div>
           </div>
-        </div>
       </nav>
-    </div>
+  </div>
+  
     <div id="sidebar">
       <h1 class="mb-4">Laboratorios creativos</h1>
       <!-- Filters -->
@@ -159,7 +148,7 @@
         <div class="col-12 h-100 px-4 overflow-auto">
           <div class="d-flex justify-content-between">
             <h2>Título del item</h2>
-            <div class="like" onclick="like(195)">
+            <div class="like" onclick="playBellSound()">
               <span class="heart">❤</span> <span id="contador">0</span>
             </div>
             <button
@@ -248,7 +237,7 @@
         <div class="col-12 h-100 px-4 overflow-auto">
           <div class="d-flex justify-content-between">
             <h2>Título del item</h2>
-            <div class="like" onclick="like(195)">
+            <div class="like" onclick="playBellSound()">
               <span class="heart">❤</span> <span id="contador">0</span>
             </div>
             <button
@@ -314,7 +303,7 @@
         <div class="col-12 h-100 px-4 overflow-auto">
           <div class="d-flex justify-content-between">
             <h2>Título del item</h2>
-            <div class="like" onclick="like(195)">
+            <div class="like" onclick="playBellSound()">
               <span class="heart">❤</span> <span id="contador">0</span>
             </div>
             <button
@@ -430,6 +419,7 @@
     <script src="js/menuSound.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/menu.js" defer></script>
+    <script src="js/soundToggle.js"></script>
     
   </body>
 </html>

@@ -435,3 +435,9 @@ h5.card-title {
   z-index: 10;
   position: relative;
 }
+
+#soundToggle{
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem;
+}
