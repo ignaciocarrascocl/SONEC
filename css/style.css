@@ -102,6 +102,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   font-size: 24px;
   color: white;
   background-color: black;
+  cursor: pointer;
 }
 
 .like .heart {

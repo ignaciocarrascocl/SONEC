@@ -2,7 +2,6 @@
 	$("document").ready(function(){
 		playLaboratorio();
 		cargaBuscador();
-
 	}); 
 	
 		function like(reg){	
