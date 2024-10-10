@@ -439,5 +439,12 @@ h5.card-title {
 #soundToggle{
   background-color: white;
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  display: inline-flex;
+  margin: 10px
+}
+
+.main-logo img {
+  height: 90px;
+  margin: 10px
 }
