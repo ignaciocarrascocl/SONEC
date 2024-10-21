@@ -7,9 +7,11 @@ function interactionSound() {
 }
 
 // Modal Activation Sound
-const modalOpenSoundSrc = "./audio/UISounds/sfx-modal.mp3";
-const modalOpenHowl = new Howl({ src: [modalOpenSoundSrc] });
-function modalOpenSound() {
+function modalOpenSound(pitch = 1, soundSource = "./audio/UISounds/sfx-modal.mp3") {
+  const modalOpenHowl = new Howl({
+    src: [soundSource],
+    rate: pitch
+  });
   modalOpenHowl.play();
 }
 

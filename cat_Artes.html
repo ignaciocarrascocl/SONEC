@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="container" class="soundType2">
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Estación Sensorial CECREA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="menu_principal.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="sidebarToggle" class="nav-link" href="#">Buscar laboratorio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
+                        </li>
+                    </ul>
+                    <a class="nav-link main-logo" href="/">
+                        <img src="css/img/logos/option3.png" alt="Imagen" >
+                    </a>
+    
+                    <!-- Add sound toggle icon here -->
+                    <a id="soundToggle" class="nav-link" href="#" >
+                        <img id="soundIcon" src="css/img/volume-up-fill.svg" alt="Sound On">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div id="sidebar">
+        <h1 class="mb-4">Laboratorios creativos</h1>
+        <!-- Filters -->
+        <div class="mb-4">
+            <select id="categoryFilter" class="form-select mb-3">
+                <option value="">Todas las categorías</option>
+                <option value="Artes">Artes</option>
+                <option value="Ciencias">Ciencias</option>
+                <option value="Comunicaciones">Comunicaciones</option>
+                <option value="Derechos">Derechos</option>
+                <option value="Participación">Participación</option>
+                <option value="Sustentabilidad">Sustentabilidad</option>
+                <option value="Tecnología">Tecnología</option>
+            </select>
+            <select id="centerFilter" class="form-select">
+                <option value="">Todos los centros</option>
+                <option value="Arica">Arica</option>
+                <option value="Temuco">Temuco</option>
+                <option value="Concepción">Concepción</option>
+            </select>
+        </div>
+        <div id="content" class="container my-5 full-width">
+            <div id="labsList" class="row">
+                <!-- Labs will be populated here -->
+            </div>
+        </div>
+    </div>
+    <div id="category-menu" class="red">
+        <div class="container">
+            <div class="row pt-4 pb-4">
+                <div class="col-12 animate__fadeIn animate__animated mb-3">
+                    <a href="menu_principal.html">
+                        <div class="d-flex align-items-center backmenu animate__fadeInDown animate__animated animate__delay-1s">
+                            <i class="bi bi-arrow-left me-2"></i>
+                            <span>MENÚ</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="animate__fadeInDown animate__animated animate__delay-1s">
+                        <h1>Artes</h1>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 pb-4">
+                    <div class="animate__fadeInDown animate__animated animate__delay-1s mt-3">
+                        <span>
+                            En Cecrea promovemos que la sustentabilidad sea un principio. Esta área busca instalar desde una mirada local y global, la reflexión de lo sustentable y lo sostenible como un derecho ciudadano; e impulsa en todas las acciones programáticas, a que el desarrollo de la creatividad se piense y se realice ecológicamente.                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        
+
+        <div class="category-items red-items">
+            <a class="category-item-link animate__animated animate__flipInX" href="labs_Artes.html">
+                <div class="category-item">
+                    <div class="inner-item"></div>
+                    <span>Laboratorio Uno</span>
+                </div>
+            </a>
+            <a class="category-item-link animate__animated animate__flipInX" href="labs_Artes.html">
+                <div class="category-item">
+                    <div class="inner-item"></div>
+                    <span>Laboratorio Uno</span>
+                </div>
+            </a>
+            <a class="category-item-link animate__animated animate__flipInX" href="labs_Artes.html">
+                <div class="category-item">
+                    <div class="inner-item"></div>
+                    <span>Laboratorio Uno</span>
+                </div>
+            </a>
+            <a class="category-item-link animate__animated animate__flipInX" href="labs_Artes.html">
+                <div class="category-item">
+                    <div class="inner-item"></div>
+                    <span>Laboratorio Uno</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/menuSound.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/soundToggle.js"></script>
+</body>
+</html>

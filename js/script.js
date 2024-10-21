@@ -100,9 +100,44 @@ const hideOverlay = () => {
   document.getElementById("overlay").classList.remove("show");
 };
 
+function playPopSoundBasedOnClass() {
+  const pitch = getPitchFromClass();
+
+  if (document.body.classList.contains("popSound1")) {
+    modalOpenSound(pitch, "./audio/UISounds/FUPC-TISS/sound1-test.mp3");
+  } else if (document.body.classList.contains("popSound2")) {
+    modalOpenSound(pitch, "./audio/UISounds/FUPC-TISS/sound2-test.mp3");
+  } else {
+    modalOpenSound(pitch);
+  }
+}
+
+function getPitchFromClass() {
+  for (let i = 1; i <= 7; i++) {
+    if (document.body.classList.contains(`pitch${i}`)) {
+      return i; // Returns the pitch if found
+    }
+  }
+  return 1; // Default pitch if no pitch class is found
+}
+
+function showPopper() {
+  const idToShow = this.getAttribute("data-popTarget");
+  document.getElementById(idToShow).classList.add("show");
+  showOverlay();
+  
+  if (document.body.classList.contains("soundType3")) {
+    playPopSoundBasedOnClass(); // Play the correct sound based on class
+  } else {
+    modalOpenSound(); // Play the modal open sound
+    popOpenSound();
+    // Add your popOpenSound function here if needed
+  }
+}
+
 const cerrarPopper = () => {
   if (document.body.classList.contains("soundType3")) {
-    modalOpenSound(); // Play only the modal open sound (using it for close as well)
+    playPopSoundBasedOnClass(); // Play only the modal open sound (using it for close as well)
   } else {
     popCloseSound();   // Play the close popper sound
   }
@@ -115,21 +150,6 @@ const cerrarPopper = () => {
   const sounds = document.getElementsByTagName("audio");
   for (let i = 0; i < sounds.length; i++) sounds[i].pause();
 };
-
-
-function showPopper() {
-  const idToShow = this.getAttribute("data-popTarget");
-  document.getElementById(idToShow).classList.add("show");
-  showOverlay();
-  
-  if (document.body.classList.contains("soundType3")) {
-    modalOpenSound(); // Play only the modal open sound
-  } else {
-    modalOpenSound(); // Play the modal open sound
-    popOpenSound();    // Play the open popper sound
-  }
-}
-
 
 document.querySelectorAll(".lab-item").forEach((item) => {
   item.addEventListener("click", showPopper, false);

@@ -53,6 +53,43 @@ a.category-item-link {
   z-index: 100
 }
 
+.red-background {
+  background: #c01001;
+}
+
+.red-background .inner-menu {
+  color: white !important;
+}
+
+.red,
+.cat-red .header,
+.cat-red .crooked,
+.cat-red .rounded-back,
+.red-items a.category-item-link:hover {
+  background: #c01001 !important;
+  color: white;
+  z-index: 100;
+}
+
+.yellow-background {
+  background: #ffb800;
+}
+
+.yellow-background .inner-menu {
+  color: white !important;
+}
+
+.yellow,
+.cat-yellow .header,
+.cat-yellow .crooked,
+.cat-yellow .rounded-back,
+.yellow-items a.category-item-link:hover {
+  background: #ffb800 !important;
+  color: white;
+  z-index: 100;
+}
+
+
 .lab-white-side{
   background-color: white;
 }
