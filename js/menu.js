@@ -1,20 +1,39 @@
 $(document).ready(function() {
-    // Toggle sidebar
-    $('#sidebarToggle').click(function() {
+    $('#sidebarToggle').click(function(event) {
+        event.stopPropagation(); // Prevent the click from propagating to the document
+
         console.log('Sidebar toggle clicked'); // Log to confirm click event
         $('#sidebar').toggleClass('active');
         $('#content').toggleClass('full-width');
+        $('#overlay').toggleClass('active');
     });
 
-    // Hide sidebar when clicking outside of it
+    // Hide sidebar and overlay when clicking outside of them
     $(document).click(function(event) {
-        if (!$(event.target).closest('#sidebar, #sidebarToggle').length) {
+        // If the click is not within #sidebar, #sidebarToggle, or #overlay
+        if (!$(event.target).closest('#sidebar, #sidebarToggle, #overlay').length) {
             if ($('#sidebar').hasClass('active')) {
                 $('#sidebar').removeClass('active');
                 $('#content').removeClass('full-width');
+                $('#overlay').removeClass('active');
             }
         }
     });
+
+    // Prevent clicks inside the sidebar from closing it
+    $('#sidebar').click(function(event) {
+        event.stopPropagation(); // Prevent the click from propagating to the document
+    });
+
+    // Remove overlay and hide sidebar if overlay is clicked
+    $('#overlay').click(function() {
+        if ($('#sidebar').hasClass('active')) {
+            $('#sidebar').removeClass('active');
+            $('#content').removeClass('full-width');
+            $('#overlay').removeClass('active');
+        }
+    });
+    
 
     // Fetch content.json and setup filters
     $.getJSON('content.json', function(data) {

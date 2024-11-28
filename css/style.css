@@ -328,11 +328,11 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
   width: 100vw;
   height: 100vh;
   background: black;
-  opacity: 0.3;
+  opacity: 0.7;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Back to Home Button */
