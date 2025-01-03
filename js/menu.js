@@ -1,39 +1,20 @@
 $(document).ready(function() {
-    $('#sidebarToggle').click(function(event) {
-        event.stopPropagation(); // Prevent the click from propagating to the document
-
+    // Toggle sidebar
+    $('#sidebarToggle').click(function() {
         console.log('Sidebar toggle clicked'); // Log to confirm click event
         $('#sidebar').toggleClass('active');
         $('#content').toggleClass('full-width');
-        $('#overlay').toggleClass('active');
     });
 
-    // Hide sidebar and overlay when clicking outside of them
+    // Hide sidebar when clicking outside of it
     $(document).click(function(event) {
-        // If the click is not within #sidebar, #sidebarToggle, or #overlay
-        if (!$(event.target).closest('#sidebar, #sidebarToggle, #overlay').length) {
+        if (!$(event.target).closest('#sidebar, #sidebarToggle').length) {
             if ($('#sidebar').hasClass('active')) {
                 $('#sidebar').removeClass('active');
                 $('#content').removeClass('full-width');
-                $('#overlay').removeClass('active');
             }
         }
     });
-
-    // Prevent clicks inside the sidebar from closing it
-    $('#sidebar').click(function(event) {
-        event.stopPropagation(); // Prevent the click from propagating to the document
-    });
-
-    // Remove overlay and hide sidebar if overlay is clicked
-    $('#overlay').click(function() {
-        if ($('#sidebar').hasClass('active')) {
-            $('#sidebar').removeClass('active');
-            $('#content').removeClass('full-width');
-            $('#overlay').removeClass('active');
-        }
-    });
-    
 
     // Fetch content.json and setup filters
     $.getJSON('content.json', function(data) {
@@ -84,7 +65,7 @@ $(document).ready(function() {
                 $('#labModal').modal('show');
             });
         } else {
-            labsList.append('<div class="col-12"><p>No labs found.</p></div>');
+            labsList.append('<div class="col-12"><p>No se encontaron laboratorios.</p></div>');
         }
     }
 });
