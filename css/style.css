@@ -286,6 +286,10 @@ span.texto {
   align-items: center;
 }
 
+.justiwrong {
+  text-align: justify;
+}
+
 .home h1 {
   text-align: center;
   font-size: 250%;
