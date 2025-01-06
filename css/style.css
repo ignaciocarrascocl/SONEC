@@ -171,6 +171,7 @@ span.rounded-back {
   height: 40px;
   display: block;
   border-radius: 100%;
+  min-width: 40px;
 }
 
 span.texto {
