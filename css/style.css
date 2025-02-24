@@ -313,9 +313,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 /* Back to Home Button */
 .volver_home {
   filter: invert(1);
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+padding: 20px;
 }
 
 .blue .volver_home,
