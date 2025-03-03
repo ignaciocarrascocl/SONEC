@@ -6,10 +6,10 @@ const fmSynth = new Tone.FMSynth({
         type: 'sine'
     },
     envelope: {
-        attack: 0.2, // Softer attack
-        decay: 0.3, // Slightly longer decay
-        sustain: 0.4, // Lower sustain for a balanced sound
-        release: 0.5 // Longer release for a gentle fade-out
+        attack: 0.2,
+        decay: 0.3,
+        sustain: 0.4,
+        release: 0.5
     },
     modulation: {
         type: 'sine'
@@ -22,60 +22,81 @@ const fmSynth = new Tone.FMSynth({
     }
 }).toDestination();
 
-// Static reverb and delay configuration
 const reverb = new Tone.Reverb({
-    decay: 2.5, // Slightly longer decay time for a richer effect
-    wet: 0.3 // Subtle reverb effect
+    decay: 2.5,
+    wet: 0.3
 }).toDestination();
 
 const delay = new Tone.FeedbackDelay({
     delayTime: "8n",
-    feedback: 0.2, // Low feedback to prevent excessive buildup
-    wet: 0.2 // Subtle delay effect
+    feedback: 0.2,
+    wet: 0.2
 }).toDestination();
 
-const volume = new Tone.Volume(-12).toDestination(); // Lower volume by 12dB
+const volume = new Tone.Volume(-12).toDestination();
 
-// Connect effects
 fmSynth.connect(reverb);
 reverb.connect(delay);
 delay.connect(volume);
 
-// Map mouse position to frequency (horizontal axis)
-function getFrequencyFromMouseX(xPosition) {
+function getFrequencyFromX(xPosition) {
     const screenWidth = window.innerWidth;
-    const noteIndex = Math.floor((xPosition / screenWidth) * 12); // 12 notes in an octave
-    const middleCFrequency = 261.63; // Middle C frequency
+    const noteIndex = Math.floor((xPosition / screenWidth) * 12);
+    const middleCFrequency = 261.63;
     return middleCFrequency * Math.pow(2, noteIndex / 12);
 }
 
-// Map mouse position to harmonicity (vertical axis)
-function getHarmonicityFromMouseY(yPosition) {
+function getHarmonicityFromY(yPosition) {
     const screenHeight = window.innerHeight;
-    return (yPosition / screenHeight) * 8; // Map vertical position to a range of harmonicity values
+    return (yPosition / screenHeight) * 8;
 }
 
-// Handle mouse down event to start playing note
-window.addEventListener('mousedown', function(event) {
-    const frequency = getFrequencyFromMouseX(event.clientX);
-    const harmonicity = getHarmonicityFromMouseY(event.clientY);
-    fmSynth.harmonicity.value = harmonicity; // Set harmonicity based on mouse position
-    fmSynth.triggerAttack(frequency, Tone.now());
-
-    // Handle mouse move event for smooth tone transition
-    window.addEventListener('mousemove', handleMouseMove);
-});
-
-// Handle mouse move event for smooth tone transition
-function handleMouseMove(event) {
-    const frequency = getFrequencyFromMouseX(event.clientX);
-    const harmonicity = getHarmonicityFromMouseY(event.clientY);
+function startSound(x, y) {
+    const frequency = getFrequencyFromX(x);
+    const harmonicity = getHarmonicityFromY(y);
     fmSynth.harmonicity.value = harmonicity;
-    fmSynth.setNote(frequency, Tone.now()); // Smoothly transition to the new frequency
+    fmSynth.triggerAttack(frequency, Tone.now());
 }
 
-// Handle mouse up event to release note
-window.addEventListener('mouseup', function() {
+function updateSound(x, y) {
+    const frequency = getFrequencyFromX(x);
+    const harmonicity = getHarmonicityFromY(y);
+    fmSynth.harmonicity.value = harmonicity;
+    fmSynth.setNote(frequency, Tone.now());
+}
+
+function stopSound() {
     fmSynth.triggerRelease(Tone.now());
-    window.removeEventListener('mousemove', handleMouseMove); // Stop listening to mouse move events when the mouse is released
+}
+
+window.addEventListener('mousedown', (event) => {
+    startSound(event.clientX, event.clientY);
+    window.addEventListener('mousemove', moveHandler);
 });
+
+window.addEventListener('mouseup', () => {
+    stopSound();
+    window.removeEventListener('mousemove', moveHandler);
+});
+
+function moveHandler(event) {
+    updateSound(event.clientX, event.clientY);
+}
+
+window.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    const touch = event.touches[0];
+    startSound(touch.clientX, touch.clientY);
+    window.addEventListener('touchmove', touchMoveHandler);
+});
+
+window.addEventListener('touchend', () => {
+    stopSound();
+    window.removeEventListener('touchmove', touchMoveHandler);
+});
+
+function touchMoveHandler(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    updateSound(touch.clientX, touch.clientY);
+}
