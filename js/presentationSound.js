@@ -1,38 +1,15 @@
-// Initialize Tone.js FMSynth with custom settings for smoother sound
+// Inicializa Tone.js FMSynth con configuración personalizada
 const fmSynth = new Tone.FMSynth({
-    harmonicity: 1, // Initial harmonicity, this will be interactive
+    harmonicity: 1,
     modulationIndex: 10,
-    oscillator: {
-        type: 'sine'
-    },
-    envelope: {
-        attack: 0.2,
-        decay: 0.3,
-        sustain: 0.4,
-        release: 0.5
-    },
-    modulation: {
-        type: 'sine'
-    },
-    modulationEnvelope: {
-        attack: 0.2,
-        decay: 0.3,
-        sustain: 0.4,
-        release: 0.5
-    }
+    oscillator: { type: 'sine' },
+    envelope: { attack: 0.2, decay: 0.3, sustain: 0.4, release: 0.5 },
+    modulation: { type: 'sine' },
+    modulationEnvelope: { attack: 0.2, decay: 0.3, sustain: 0.4, release: 0.5 }
 }).toDestination();
 
-const reverb = new Tone.Reverb({
-    decay: 2.5,
-    wet: 0.3
-}).toDestination();
-
-const delay = new Tone.FeedbackDelay({
-    delayTime: "8n",
-    feedback: 0.2,
-    wet: 0.2
-}).toDestination();
-
+const reverb = new Tone.Reverb({ decay: 2.5, wet: 0.3 }).toDestination();
+const delay = new Tone.FeedbackDelay({ delayTime: "8n", feedback: 0.2, wet: 0.2 }).toDestination();
 const volume = new Tone.Volume(-12).toDestination();
 
 fmSynth.connect(reverb);
@@ -100,3 +77,13 @@ function touchMoveHandler(event) {
     const touch = event.touches[0];
     updateSound(touch.clientX, touch.clientY);
 }
+
+// Activar AudioContext en la primera interacción
+['click', 'touchstart', 'keydown'].forEach(event => {
+    document.addEventListener(event, async () => {
+        if (Tone.context.state !== 'running') {
+            await Tone.start();
+            console.log("AudioContext started");
+        }
+    }, { once: true });
+});
