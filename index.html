@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +9,90 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .home h1 {
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none;    /* Firefox */
-            -ms-user-select: none;     /* Internet Explorer/Edge */
-            user-select: none;         /* Standard */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .button {
+            background: black;
+            color: white;
+            display: none; /* Oculto por defecto */
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        /* Mostrar solo en móviles */
+        @media (max-width: 600px) {
+            .button {
+                display: inline-block;
+            }
+        }
+
+        .home-mod {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .home-mod h1 {
+            text-align: center;
+            font-size: 250%;
+            font-family: "Fjalla One", sans-serif;
+            font-weight: 400;
+        }
+
+        .home-mod h1 a {
+            text-decoration: none !important;
+            font-family: "Fjalla One", sans-serif;
+            color: black;
         }
     </style>
 </head>
 
 <body id="tsparticles" class="white">
-      <div class="overlay">
-            <div class="home">
-                <h1><a href="menu_principal.html">ESTACIÓN SENSORIAL <br> CECREA</a></h1>
+    <div class="overlay">
+        <div class="home-mod">
+            <h1><a href="menu_principal.html">ESTACIÓN SENSORIAL <br> CECREA</a></h1>
+            <div class="button" id="soundButton">
+                Activar sonido
             </div>
-      </div>
+        </div>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js" integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
+        integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/tone"></script>
     <script src="js/presentationSound.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
 
-     <script>// particles 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const soundButton = document.getElementById("soundButton");
 
-tsParticles
-    .loadJSON("tsparticles", "js/particles.json")
-    .then((container) => {
-        console.log("callback - tsparticles config loaded");
-    })
-    .catch((error) => {
-        console.error(error);
-    });</script>
-    
+            soundButton.addEventListener("click", function () {
+                soundButton.style.display = "none"; // Oculta el botón después del clic
+            });
+        });
+
+        // Cargar partículas
+        tsParticles
+            .loadJSON("tsparticles", "js/particles.json")
+            .then((container) => {
+                console.log("callback - tsparticles config loaded");
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    </script>
+
 </body>
+
 </html>
