@@ -18,16 +18,11 @@
         .button {
             background: black;
             color: white;
-            display: none; /* Oculto por defecto */
             padding: 0.5rem;
             cursor: pointer;
-        }
-
-        /* Mostrar solo en móviles */
-        @media (max-width: 600px) {
-            .button {
-                display: inline-block;
-            }
+            /* Mostrar siempre en dispositivos móviles */
+            display: inline-block;
+            margin-top: 20px;
         }
 
         .home-mod {
@@ -36,6 +31,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            flex-direction: column;
         }
 
         .home-mod h1 {
@@ -63,6 +59,7 @@
         </div>
     </div>
 
+    <!-- Cargar scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
         integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -70,18 +67,77 @@
         integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/tone"></script>
+    
+    <!-- Cargar el script principal de sonido después de la configuración -->
+    <script>
+        // Verificar si estamos en iOS
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const soundButton = document.getElementById("soundButton");
+            
+            // En dispositivos que no son iOS, ocultar el botón en escritorio
+            if (!isIOS && window.innerWidth > 600) {
+                soundButton.style.display = "none";
+            }
+            
+            // Manejar la activación del sonido
+            soundButton.addEventListener("click", async function () {
+                try {
+                    // La clave: Iniciar explícitamente Tone.js dentro del evento de clic
+                    if (Tone.context.state !== 'running') {
+                        await Tone.start();
+                        console.log("AudioContext started through button click");
+                        
+                        // Necesario para iOS: reproducir un sonido silencioso para "despertar" completamente el audio
+                        const silentOsc = new Tone.Oscillator().toDestination();
+                        silentOsc.volume.value = -100; // Prácticamente silencioso
+                        silentOsc.start();
+                        silentOsc.stop("+0.1"); // Detener después de 100ms
+                        
+                        // Reproducir un breve tono de prueba para confirmar
+                        const testOsc = new Tone.Oscillator(440, "sine").toDestination();
+                        testOsc.volume.value = -20; // Bajo volumen para no molestar
+                        testOsc.start();
+                        testOsc.stop("+0.2"); // Detener después de 200ms
+                    }
+                    
+                    // Ocultar el botón una vez que el audio está activado
+                    soundButton.style.display = "none";
+                    
+                } catch (error) {
+                    console.error("Error initializing audio:", error);
+                    soundButton.textContent = "Intentar nuevamente";
+                }
+            });
+            
+            // Intentar iniciar automáticamente en dispositivos que no son iOS
+            if (!isIOS) {
+                // Los eventos que comúnmente funcionan en navegadores modernos
+                ['click', 'touchstart', 'keydown'].forEach(eventType => {
+                    document.addEventListener(eventType, async () => {
+                        if (Tone.context.state !== 'running') {
+                            try {
+                                await Tone.start();
+                                console.log("AudioContext started automatically");
+                                
+                                // Ocultar el botón si se inició automáticamente
+                                soundButton.style.display = "none";
+                            } catch (e) {
+                                console.error("Auto initialization failed:", e);
+                            }
+                        }
+                    }, { once: true });
+                });
+            }
+        });
+    </script>
+    
+    <!-- Cargar el script de sonido DESPUÉS de la configuración de audio -->
     <script src="js/presentationSound.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const soundButton = document.getElementById("soundButton");
-
-            soundButton.addEventListener("click", function () {
-                soundButton.style.display = "none"; // Oculta el botón después del clic
-            });
-        });
-
         // Cargar partículas
         tsParticles
             .loadJSON("tsparticles", "js/particles.json")
@@ -92,7 +148,6 @@
                 console.error(error);
             });
     </script>
-
 </body>
 
 </html>
