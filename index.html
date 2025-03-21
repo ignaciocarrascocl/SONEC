@@ -1,197 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .home h1 {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        .button {
-            background: black;
-            color: white;
-            padding: 0.5rem;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .home-mod {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
-        .home-mod h1 {
-            text-align: center;
-            font-size: 250%;
-            font-family: "Fjalla One", sans-serif;
-            font-weight: 400;
-        }
-
-        .home-mod h1 a {
-            text-decoration: none !important;
-            font-family: "Fjalla One", sans-serif;
-            color: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .home h1 {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .button {
+      background: black;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .home-mod {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .home-mod h1 {
+      text-align: center;
+      font-size: 250%;
+      font-family: "Fjalla One", sans-serif;
+      font-weight: 400;
+    }
+    .home-mod h1 a {
+      text-decoration: none !important;
+      font-family: "Fjalla One", sans-serif;
+      color: black;
+    }
+  </style>
 </head>
-
 <body id="tsparticles" class="white">
-    <div class="overlay">
-        <div class="home-mod">
-            <h1><a href="menu_principal.html">ESTACIÓN SENSORIAL <br> CECREA</a></h1>
-            <div class="button" id="soundButton">
-                Activar sonido
-            </div>
-        </div>
+  <div class="overlay">
+    <div class="home-mod">
+      <h1><a href="menu_principal.html">ESTACIÓN SENSORIAL <br> CECREA</a></h1>
+      <div class="button" id="soundButton">
+        Activar sonido
+      </div>
     </div>
+  </div>
 
-    <!-- Cargar scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
-        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
-        integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/tone"></script>
-    
-    <!-- Primero cargar el script original de sonido -->
-    <script src="js/presentationSound.js"></script>
-    
-    <!-- Luego, nuestro script para asegurar la inicialización -->
-    <script>
-        // Verificar si estamos en iOS
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            const soundButton = document.getElementById("soundButton");
-            let audioInitialized = false;
-            
-            // En dispositivos que no son iOS, ocultar el botón en escritorio
-            if (!isIOS && window.innerWidth > 600) {
+  <!-- Cargar scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
+    integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/tone"></script>
+  
+  <!-- Primero cargar el script original de sonido -->
+  <script src="js/presentationSound.js"></script>
+  
+  <!-- Luego, nuestro script para asegurar la inicialización -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const soundButton = document.getElementById("soundButton");
+      let audioInitialized = false;
+      
+      // Detectar iOS
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      
+      // En dispositivos que no son iOS, ocultar el botón en escritorio
+      if (!isIOS && window.innerWidth > 600) {
+        soundButton.style.display = "none";
+      }
+      
+      soundButton.addEventListener("click", async function () {
+        try {
+          // Directamente iniciar el AudioContext en respuesta a la acción del usuario
+          if (Tone.context.state !== 'running') {
+            await Tone.start();
+            console.log("AudioContext started");
+          }
+          
+          // Opcional: reproducir un breve tono de prueba
+          const testOsc = new Tone.Oscillator(440, "sine").toDestination();
+          testOsc.volume.value = -20;
+          testOsc.start();
+          testOsc.stop("+0.2");
+          
+          audioInitialized = true;
+          soundButton.style.display = "none";
+          
+          // Llamar directamente a startSound. Puedes ajustar la posición según convenga.
+          if (typeof startSound === 'function') {
+            startSound(window.innerWidth / 2, window.innerHeight / 2);
+          }
+        } catch (error) {
+          console.error("Error initializing audio:", error);
+          soundButton.textContent = "Intentar nuevamente";
+        }
+      });
+      
+      // Para dispositivos no iOS, se puede intentar iniciar el AudioContext con otro evento de usuario
+      if (!isIOS) {
+        ['click', 'touchstart', 'keydown'].forEach(eventType => {
+          document.addEventListener(eventType, async () => {
+            if (!audioInitialized && Tone.context.state !== 'running') {
+              try {
+                await Tone.start();
+                console.log("AudioContext started on " + eventType);
+                audioInitialized = true;
                 soundButton.style.display = "none";
+              } catch (error) {
+                console.error("Error initializing audio:", error);
+              }
             }
-            
-            // Función para inicializar el audio y reconfigurar los eventos
-            async function initializeAudioAndSetupEvents() {
-                try {
-                    // Iniciar explícitamente Tone.js
-                    if (Tone.context.state !== 'running') {
-                        await Tone.start();
-                        console.log("AudioContext started");
-                        
-                        // Reproducir un breve tono de prueba para confirmar
-                        const testOsc = new Tone.Oscillator(440, "sine").toDestination();
-                        testOsc.volume.value = -20;
-                        testOsc.start();
-                        testOsc.stop("+0.2");
-                    }
-                    
-                    audioInitialized = true;
-                    return true;
-                } catch (error) {
-                    console.error("Error initializing audio:", error);
-                    return false;
-                }
-            }
-            
-            // Manejar la activación del sonido mediante el botón
-            soundButton.addEventListener("click", async function () {
-                const success = await initializeAudioAndSetupEvents();
-                if (success) {
-                    // Ocultar el botón una vez que el audio está activado
-                    soundButton.style.display = "none";
-                    
-                    // Simular un evento touch para probar el sistema de sonido interactivo
-                    // Este paso es clave para "despertar" completamente el sistema de eventos en iOS
-                    setTimeout(() => {
-                        const simulatedEvent = new TouchEvent('touchstart', {
-                            bubbles: true,
-                            cancelable: true,
-                            view: window
-                        });
-                        
-                        // Intentar simular un toque para activar startSound
-                        document.dispatchEvent(simulatedEvent);
-                        
-                        // Otra opción: llamar directamente a startSound si está disponible globalmente
-                        if (typeof startSound === 'function') {
-                            startSound(window.innerWidth / 2, window.innerHeight / 2);
-                            setTimeout(() => {
-                                if (typeof stopSound === 'function') {
-                                    stopSound();
-                                }
-                            }, 300);
-                        }
-                    }, 500);
-                } else {
-                    soundButton.textContent = "Intentar nuevamente";
-                }
-            });
-            
-            // Intentar iniciar automáticamente en dispositivos que no son iOS
-            if (!isIOS) {
-                ['click', 'touchstart', 'keydown'].forEach(eventType => {
-                    document.addEventListener(eventType, async () => {
-                        if (!audioInitialized) {
-                            const success = await initializeAudioAndSetupEvents();
-                            if (success) {
-                                soundButton.style.display = "none";
-                            }
-                        }
-                    }, { once: true });
-                });
-            }
+          }, { once: true });
         });
-    </script>
+      }
+    });
+  </script>
+  
+  <script src="https://unpkg.com/@barba/core"></script>
+
+  <script>
+    // Cargar partículas
+    tsParticles
+      .loadJSON("tsparticles", "js/particles.json")
+      .then((container) => {
+        console.log("callback - tsparticles config loaded");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     
-    <script src="https://unpkg.com/@barba/core"></script>
-
-    <script>
-        // Cargar partículas
-        tsParticles
-            .loadJSON("tsparticles", "js/particles.json")
-            .then((container) => {
-                console.log("callback - tsparticles config loaded");
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-            
-        // Exponer funciones del presentationSound.js al ámbito global
-        // (sólo necesario si no están ya expuestas)
-        window.addEventListener('load', function() {
-            if (typeof startSound !== 'function') {
-                window.startSound = function(x, y) {
-                    console.log("Global startSound called");
-                    // Esta es sólo una solución de respaldo si las funciones originales no están disponibles
-                    if (Tone && Tone.context.state === 'running') {
-                        const synth = new Tone.Synth().toDestination();
-                        synth.triggerAttackRelease("C4", "8n");
-                    }
-                };
-            }
-            
-            if (typeof stopSound !== 'function') {
-                window.stopSound = function() {
-                    console.log("Global stopSound called");
-                    // Respaldo
-                };
-            }
-        });
-    </script>
+    // Exponer funciones de presentationSound.js al ámbito global (si no están ya disponibles)
+    window.addEventListener('load', function() {
+      if (typeof startSound !== 'function') {
+        window.startSound = function(x, y) {
+          console.log("Global startSound called");
+          if (Tone && Tone.context.state === 'running') {
+            const synth = new Tone.Synth().toDestination();
+            synth.triggerAttackRelease("C4", "8n");
+          }
+        };
+      }
+      
+      if (typeof stopSound !== 'function') {
+        window.stopSound = function() {
+          console.log("Global stopSound called");
+        };
+      }
+    });
+  </script>
 </body>
-
 </html>
