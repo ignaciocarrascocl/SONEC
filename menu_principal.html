@@ -1,336 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .home h1 {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .button {
+      background: black;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .home-mod {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .home-mod h1 {
+      text-align: center;
+      font-size: 250%;
+      font-family: "Fjalla One", sans-serif;
+      font-weight: 400;
+    }
+    .home-mod h1 a {
+      text-decoration: none !important;
+      font-family: "Fjalla One", sans-serif;
+      color: black;
+    }
+  </style>
 </head>
-<body id="container" class="white position-relative soundType1">
-    <!-- HEADER MENU -->
-    <div id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Estación Sensorial CECREA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="menu_principal.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="sidebarToggle" class="nav-link" href="#">Buscar laboratorio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
-                        </li>
-                    </ul>
-                    <a class="nav-link main-logo" href="/">
-                        <img src="css/img/logos/option3.png" alt="Imagen">
-                    </a>
-    
-                    <!-- Add sound toggle icon here -->
-                    <a id="soundToggle" class="nav-link" href="#" >
-                        <img id="soundIcon" src="css/img/volume-up-fill.svg" alt="Sound On">
-                    </a>
-                </div>
-            </div>
-        </nav>
+<body id="tsparticles" class="white">
+  <div class="overlay">
+    <div class="home-mod">
+      <h1><a href="menu_principal.html">ESTACIÓN SENSORIAL <br> CECREA</a></h1>
+      <div class="button" id="soundButton">
+        Activar sonido
+      </div>
     </div>
-    
-    
-    <!-- END HEADR -->
-    <!-- SIDE BAR -->
-    <div id="sidebar">
-        <h1 class="mb-4">Laboratorios creativos</h1>
+  </div>
 
-        <!-- Filters -->
-        <div class="mb-4">
-            <select id="categoryFilter" class="form-select mb-3">
-                <option value="">Todas las categorías</option>
-                <option value="Artes">Artes</option>
-                <option value="Ciencias">Ciencias</option>
-                <option value="Comunicaciones">Comunicaciones</option>
-                <option value="Derechos">Derechos</option>
-                <option value="Participación">Participación</option>
-                <option value="Sustentabilidad">Sustentabilidad</option>
-                <option value="Tecnología">Tecnología</option>
-            </select>
-            <select id="centerFilter" class="form-select">
-                <option value="">Todos los centros</option>
-                <option value="Arica">Arica</option>
-                <option value="Temuco">Temuco</option>
-                <option value="Concepción">Concepción</option>
-            </select>
-        </div>
-        <div id="content" class="container my-5 full-width">
-            <div id="labsList" class="row">
-                <!-- Labs will be populated here -->
-            </div>
-        </div>
-    </div>
-
-    <div class="buttonWrapper">
-        <!-- Artes -->
-        <a class="ballWrapper ballWrapper_5x " href="cat_Artes.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_1">
-                <div class="decoration"></div>
-                <span>Artes</span>
-            </div>
-        </a>
-
-        <!-- Ciencias -->
-        <a class="ballWrapper ballWrapper_4x " href="cat_Ciencias.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-2s" id="item_2">
-                <div class="decoration"></div>
-                <span>Ciencias</span>
-            </div>
-        </a>
-
-        <!-- Comunicación -->
-        <a class="ballWrapper ballWrapper_5x " href="cat_Comunicaciones.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing" id="item_3">
-                <div class="decoration"></div>
-                <span>Comunicación</span>
-            </div>
-        </a>
-
-        <!-- Derechos -->
-        <a class="ballWrapper ballWrapper_4x " href="cat_Derechos.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_4">
-                <div class="decoration"></div>
-                <span>Derechos</span>
-            </div>
-        </a>
-
-        <!-- Participación -->
-        <a class="ballWrapper ballWrapper_5x " href="cat_Participacion.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-2s" id="item_5">
-                <div class="decoration"></div>
-                <span>Participación</span>
-            </div>
-        </a>
-
-        <!-- Sustentabilidad -->
-        <a class="ballWrapper ballWrapper_4x " href="cat_Sustentabilidad.html">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing" id="item_6">
-                <div class="decoration"></div>
-                <span>Sustentabilidad</span>
-            </div>
-        </a>
-
-        <!-- Tecnología -->
-        <a class="ballWrapper ballWrapper_5x" href="cat_Tecnologia.html">
-            <div class="ball-item animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="item_7">
-                <div class="decoration"></div>
-                <span>Tecnología</span>
-            </div>
-        </a>
-
-        <!-- Color Change Divs -->
-        <div class="ballWrapper ballWrapper_3x tool  color-change" id="blue">
-            <div class="ball-item animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
-            </div>
-        </div>
-        <div class="ballWrapper ballWrapper_2x tool color-change" id="yellow">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
-            </div>
-        </div>
-        <div class="ballWrapper ballWrapper_2x tool color-change" id="red">
-            <div class="ball-item  animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
-            </div>
-        </div>
-
-        <!-- Black Balls -->
-        <div class="ballWrapper ballWrapper_3x tool black" id="drumMachineActivator">
-            <div class="ball-item ripple color-change animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" >
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-    
-            </div>
-
-        </div>
-        <div class="ballWrapper ballWrapper_2x tool black" id="keyboardActivator">
-            <div class="ball-item color-change animate__animated animate__fadeInRight keep_pulsing animate__delay-1s" id="waverBackground">
-            </div>
-        </div>
-
-    </div>
-    <a href="index.html"><img class="volver_home" src="css/img/volver.png" width="40px" alt=""></a>
-    <!-- OVERLAY -->
-    <div id="overlay"></div>
-    <!-- DRUM MACHINE -->
-    <div id="drum_machine" class="container mt-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>
-                    Escucha, juega y crea
-                </h2>
-                </div>
-            <div class="col-12 text-center">
-                <div class="pad btn pad-yellow btn-dark m-2 rounded-circle" data-sound="kick" >
-                    A</div>
-                <div class="pad btn pad-red btn-dark m-2 rounded-circle" data-sound="snare" >
-                    B</div>
-                <div class="pad btn pad-yellow btn-dark m-2 rounded-circle" data-sound="hihat" >
-                    C</div>
-                <div class="pad btn pad-red btn-dark m-2 rounded-circle" data-sound="perc">
-                    D</div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <table id="sequencer" class="table table-bordered text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">1</th>
-                            <th scope="col">2</th>
-                            <th scope="col">3</th>
-                            <th scope="col">4</th>
-                            <th scope="col">5</th>
-                            <th scope="col">6</th>
-                            <th scope="col">7</th>
-                            <th scope="col">8</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows will be generated here by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-6 text-center">
-                <input type="range" id="tempo" class="form-range" min="40" max="280" value="120">
-
-            </div>
-            <div class="col-6 text-center">
-                <input type="range" id="volume" class="form-range" min="0" max="100" value="50">
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12 text-center">
-                <button id="play" class="btn btn-success pad-yellow m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-play-fill"></i>
-                </button>
-                <button id="stop" class="btn btn-danger m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-stop-fill"></i>
-                </button>
-                <button id="reset" class="btn btn-warning pad-red m-2 rounded-circle" style="width: 60px; height: 60px;">
-                    <i class="bi bi-arrow-clockwise"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- END DRUM MACHINE -->
-
-
-    <!-- KEYBOARD -->
-    <div id="keyboard">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-12 text-center">
-                    <h2>
-                        Juega, crea y escucha
-                    </h2>
-                    </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded whiteKey" data-sound="key1"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded blueKey" data-sound="key2"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded redKey" data-sound="key3"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded whiteKey" data-sound="key4"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded blueKey" data-sound="key5"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded redKey" data-sound="key6"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded whiteKey" data-sound="key7"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded blueKey" data-sound="key8"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded redKey" data-sound="key9"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded whiteKey" data-sound="key10"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded blueKey" data-sound="key11"></div>
-                </div>
-                <div class="col-3 p-2">
-                    <div class="key btn btn-dark rounded redKey" data-sound="key12"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 p-2 text-center">
-                    <button id="cycleSound" class="btn btn-primary">NUEVO SONIDO</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- END KEYBOARD -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
-        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<!-- Correct: Each script is included only once -->
-<script src="js/menuSound.js" defer></script>
-<script src="js/script.js" defer></script>
-<script src="js/menu.js" defer></script>
-<script src="js/drumMachine.js" defer></script>
-<script src="js/soundToggle.js"></script>
-
-
-    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
-        integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        const SW = new SiriWave({
-            container: document.getElementById("waverBackground"),
-            autostart: true,
-            cover: true
+  <!-- Cargar scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.2.2/tsparticles.bundle.min.js"
+    integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/tone"></script>
+  
+  <!-- Primero cargar el script original de sonido -->
+  <script src="js/presentationSound.js"></script>
+  
+  <!-- Luego, nuestro script para asegurar la inicialización -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const soundButton = document.getElementById("soundButton");
+      let audioInitialized = false;
+      
+      // Detectar iOS
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      
+      // En dispositivos que no son iOS, ocultar el botón en escritorio
+      if (!isIOS && window.innerWidth > 600) {
+        soundButton.style.display = "none";
+      }
+      
+      soundButton.addEventListener("click", async function () {
+        try {
+          // Directamente iniciar el AudioContext en respuesta a la acción del usuario
+          if (Tone.context.state !== 'running') {
+            await Tone.start();
+            console.log("AudioContext started");
+          }
+          
+          // Opcional: reproducir un breve tono de prueba
+          const testOsc = new Tone.Oscillator(440, "sine").toDestination();
+          testOsc.volume.value = -20;
+          testOsc.start();
+          testOsc.stop("+0.2");
+          
+          audioInitialized = true;
+          soundButton.style.display = "none";
+          
+          // Llamar directamente a startSound. Puedes ajustar la posición según convenga.
+          if (typeof startSound === 'function') {
+            startSound(window.innerWidth / 2, window.innerHeight / 2);
+          }
+        } catch (error) {
+          console.error("Error initializing audio:", error);
+          soundButton.textContent = "Intentar nuevamente";
+        }
+      });
+      
+      // Para dispositivos no iOS, se puede intentar iniciar el AudioContext con otro evento de usuario
+      if (!isIOS) {
+        ['click', 'touchstart', 'keydown'].forEach(eventType => {
+          document.addEventListener(eventType, async () => {
+            if (!audioInitialized && Tone.context.state !== 'running') {
+              try {
+                await Tone.start();
+                console.log("AudioContext started on " + eventType);
+                audioInitialized = true;
+                soundButton.style.display = "none";
+              } catch (error) {
+                console.error("Error initializing audio:", error);
+              }
+            }
+          }, { once: true });
         });
-        // particles
-        tsParticles
-            .loadJSON("menuparticles", "js/menu.json")
-            .then((tsparticles) => {
-                console.log("particled");
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    </script>
-</body>
+      }
+    });
+  </script>
+  
+  <script src="https://unpkg.com/@barba/core"></script>
 
+  <script>
+    // Cargar partículas
+    tsParticles
+      .loadJSON("tsparticles", "js/particles.json")
+      .then((container) => {
+        console.log("callback - tsparticles config loaded");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    
+    // Exponer funciones de presentationSound.js al ámbito global (si no están ya disponibles)
+    window.addEventListener('load', function() {
+      if (typeof startSound !== 'function') {
+        window.startSound = function(x, y) {
+          console.log("Global startSound called");
+          if (Tone && Tone.context.state === 'running') {
+            const synth = new Tone.Synth().toDestination();
+            synth.triggerAttackRelease("C4", "8n");
+          }
+        };
+      }
+      
+      if (typeof stopSound !== 'function') {
+        window.stopSound = function() {
+          console.log("Global stopSound called");
+        };
+      }
+    });
+  </script>
+</body>
 </html>
