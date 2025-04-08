@@ -75,8 +75,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/tone"></script>
 
-  <script src="js/presentationSound.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const soundButton = document.getElementById("soundButton");
@@ -109,16 +107,14 @@
             console.log("AudioContext started");
           }
 
-          // Opcional: reproducir un breve tono de prueba
-          const testOsc = new Tone.Oscillator(440, "sine").toDestination();
-          testOsc.volume.value = -20;
-          testOsc.start();
-          testOsc.stop("+0.2");
+          // Reproducir un breve tono de prueba
+          const synth = new Tone.Synth().toDestination();
+          synth.triggerAttackRelease("C4", "16n"); // "16n" makes it a very short note
 
           audioInitialized = true;
           soundButton.style.display = "none";
 
-          // Llamar directamente a startSound. Puedes ajustar la posición según convenga.
+          // Llamar directamente a startSound si está definido
           if (typeof startSound === 'function') {
             startSound(window.innerWidth / 2, window.innerHeight / 2);
           }
