@@ -40,6 +40,19 @@
       font-family: "Fjalla One", sans-serif;
       color: black;
     }
+    /* Style for the Safari message */
+    .safari-message {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      color: #333;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      z-index: 1000; /* Ensure it's on top of other elements */
+    }
   </style>
 </head>
 <body id="tsparticles" class="white">
@@ -52,7 +65,8 @@
     </div>
   </div>
 
-  <!-- Cargar scripts -->
+  <div id="safari-message-container"></div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
     integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -60,24 +74,33 @@
     integrity="sha512-9q3ZcjB+uNfs+ap06rr6Wquh1beU9O7BIx+Lg1UAUGY9OHrtf9rQxBldFUyPbNSjfkHFZcpu6G34eCIu5HlfvQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/tone"></script>
-  
-  <!-- Primero cargar el script original de sonido -->
+
   <script src="js/presentationSound.js"></script>
-  
-  <!-- Luego, nuestro script para asegurar la inicialización -->
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const soundButton = document.getElementById("soundButton");
       let audioInitialized = false;
-      
-      // Detectar iOS
+
+      // Detectar iOS (Safari on iOS)
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      
+      // Detectar Safari on other devices
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+      const safariMessageContainer = document.getElementById('safari-message-container');
+
+      if (isSafari) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'safari-message';
+        messageDiv.textContent = 'Esta página web funciona mejor en Google Chrome.';
+        safariMessageContainer.appendChild(messageDiv);
+      }
+
       // En dispositivos que no son iOS, ocultar el botón en escritorio
       if (!isIOS && window.innerWidth > 600) {
         soundButton.style.display = "none";
       }
-      
+
       soundButton.addEventListener("click", async function () {
         try {
           // Directamente iniciar el AudioContext en respuesta a la acción del usuario
@@ -85,16 +108,16 @@
             await Tone.start();
             console.log("AudioContext started");
           }
-          
+
           // Opcional: reproducir un breve tono de prueba
           const testOsc = new Tone.Oscillator(440, "sine").toDestination();
           testOsc.volume.value = -20;
           testOsc.start();
           testOsc.stop("+0.2");
-          
+
           audioInitialized = true;
           soundButton.style.display = "none";
-          
+
           // Llamar directamente a startSound. Puedes ajustar la posición según convenga.
           if (typeof startSound === 'function') {
             startSound(window.innerWidth / 2, window.innerHeight / 2);
@@ -104,7 +127,7 @@
           soundButton.textContent = "Intentar nuevamente";
         }
       });
-      
+
       // Para dispositivos no iOS, se puede intentar iniciar el AudioContext con otro evento de usuario
       if (!isIOS) {
         ['click', 'touchstart', 'keydown'].forEach(eventType => {
@@ -124,7 +147,7 @@
       }
     });
   </script>
-  
+
   <script src="https://unpkg.com/@barba/core"></script>
 
   <script>
@@ -137,7 +160,7 @@
       .catch((error) => {
         console.error(error);
       });
-    
+
     // Exponer funciones de presentationSound.js al ámbito global (si no están ya disponibles)
     window.addEventListener('load', function() {
       if (typeof startSound !== 'function') {
@@ -149,7 +172,7 @@
           }
         };
       }
-      
+
       if (typeof stopSound !== 'function') {
         window.stopSound = function() {
           console.log("Global stopSound called");
